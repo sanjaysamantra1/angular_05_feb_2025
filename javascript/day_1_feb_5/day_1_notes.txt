@@ -1,0 +1,43 @@
+1. NodeJS
+   https://nodejs.org/en/download
+
+2. visualstudio code
+   https://code.visualstudio.com/download
+   
+3. Git SetUp
+   a. install git software :  https://git-scm.com/downloads
+   b. Create github account : https://github.com/
+   c. have git setup in local machine
+      https://github.com/sanjaysamantra1/git_notes/blob/main/git_notes.txt
+
+
+Web Development
+===============
+-Developing a website
+1. FrontEnd : User Interface (Look & Feel)
+    HTML:  Content  (paragraph , dropdown , list , table , image, form)
+    CSS:   Styling  (border,color,width,height,placement)
+    Bootstrap: CSS framework (Predefined css classes)
+    Javascript: Behaviour 
+    Angular/React/Vuejs/NextJs : Javascript Frameworks
+2. BackEnd : Develop REST APIs (Java,.net,python,PHP)
+3. DataBase : Holds the data (Oracle , postgre,mysql , mongodb)
+4. Server : where the app can be deployed (AWS,weblogic)
+
+
+Pre-requisites:
+===============
+HTML
+CSS
+Bootstrap
+javascript
+
+
+Flipkart Product Example
+========================
+1. create an HTML file in vscode
+2. ! (emmet/shortcut) to add boilerplate html code
+3. Add HTML code
+4. To Run/Open the HTML File in browser
+   a. install vs code extension (open in browser)
+   b. alt+b   / alt+shift+b
