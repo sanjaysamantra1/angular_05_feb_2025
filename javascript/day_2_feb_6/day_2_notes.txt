@@ -1,0 +1,79 @@
+HTML Emmets
+===========
+https://docs.emmet.io/cheat-sheet/
+
+!    
+p*5{This is Paragraph-$}
+#div1
+.div2
+ol>li*5{value-$}
+select>option*20{Coutry-$}
+table>tr*10>td*5{Data - $}
+
+
+How to Write and Execute a Javascript File:
+===========================================
+1. Browser ( FronEnd Development)
+    a. create a javascript file with some javascript content
+    b. include that javascript file in to HTML file
+    c. Open HTML file in browser
+2. NodeJS  ( BackEnd Development)
+   a. create a javascript file with some javascript content
+   b. run that javascript file with below command
+      node <fileName>.js
+
+Note : Every javascript code that runs on browser, might not work in nodejs
+
+
+Most Commonly Used Javascript Functions 
+========================================
+console.log()          console : Object , log : function
+document.write()       document : Object , write : function
+window.alert()         window : Object , alert : function
+
+console.log('Helllooo);  // Yes
+document.write('Helllooo);  // Yes
+window.alert('Helllooo);  // Yes
+
+log('Helllooo);  // No 
+write('Helllooo);  // No
+alert('Helllooo);  // Yes
+
+Note : While accessing window object methods/functions , using window.function() is not mandatory
+
+
+console Object methods:
+=======================
+log() , error() , warn() , assert(), table(), time(), timeEnd(), trace()
+
+
+window Object methods:
+======================
+alert()    : message + ok 
+confirm()  : message + ok , cancel
+prompt()   : input + message + ok , cancel
+print()
+close()
+open()
+atob()  :  decrypting the data
+btoa()  :  encrypting the data
+
+
+DataTypes
+=========
+number
+string
+boolean     (true,false)
+undefined   (undefined)
+null(value)
+symbol
+Object ( Object & array)
+
+
+HomeWork / Assignment
+======================
+1. Revise day-2 Discussion
+2. practice Emmets (https://docs.emmet.io/cheat-sheet/)
+3. Write a program, using prompt Ask user to enter 2 numbers,display addition result.
+
+
