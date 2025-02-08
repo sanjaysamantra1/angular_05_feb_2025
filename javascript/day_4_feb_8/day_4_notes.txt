@@ -1,0 +1,37 @@
+Function
+========
+1. pre-Defined (the function logic is alredy written, we just have to use them)
+   console.log(), window.alert(), document.write()
+2. User-Defined (we have to write the function and we have to use)
+   a. Function Declaration
+   b. Function Expression
+   c. Self Invoked
+   d. Arrow function (ES-6 2015)
+   
+
+Function Declaration vs Function Expression
+============================================
+1. Function declarations are named , function expressions are anonymous
+2. Function declarations are hoisted , function expressions are not hoisted
+
+
+Arrow Function
+==============
+Shorter Syntax
+Implicit Return / no return keyword
+No Function Keyword
+
+
+How 'this' works in arrow function and regular function
+========================================================
+Regular Function : this - how/where the function is called
+Arrow  : Arrow Function Doesn't have its own 'this'
+         arrow function always uses 'this' from the sorounding/lexical scope
+         where the function is written
+'this' : is the context where a function is being executed
+
+
+Use cases where arrow function shouldn't be used
+================================================
+-arrow functions shouldn't be used as object methods.
+-arrow function shouldn't be used if 'this' should be dynamic.

@@ -1,0 +1,17 @@
+<script>
+    // console.log(this); // window
+    let user = {
+        fName: 'Virat',
+        lName: 'Kohli',
+        fullName1: function () { // this = how the function is invoked
+            console.log(this); // this = user
+            console.log(this.fName, this.lName)
+        },
+        fullName2: () => { // this = where its written
+            console.log(this); // this = window
+            console.log(this.fName, this.lName)
+        }
+    }
+    user.fullName1();
+    user.fullName2();
+</script>

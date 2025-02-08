@@ -1,0 +1,23 @@
+<script>
+    console.log(this); // this = window
+
+    function f1() {  // this = how/where the function is called
+        console.log(this); // this = window
+    }
+    f1();
+
+    let f2 = function () {  // this = where the function is written
+        console.log(this); // this = window
+    }
+    f2();
+
+    let user = {
+        fName: 'Virat',
+        lName: 'Kohli',
+        fullName: function () { // this = how the function is invoked
+            console.log(this); // this = user
+            console.log(this.fName, this.lName)
+        }
+    }
+    user.fullName();
+</script>
