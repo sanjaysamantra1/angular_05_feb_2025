@@ -1,0 +1,31 @@
+<script>
+    let str1 = 'hello';   // String Literal / Primitive string
+    let str2 = 'hello';
+
+    let str3 = new String('hello'); // String Object
+    let str4 = new String('hello');
+
+    // typeof
+    console.log(typeof str1); // string
+    console.log(typeof str3); // Object
+
+    // comparision
+    console.log('str1 == str2', str1 == str2); // true - value compare
+    console.log('str2 == str3', str2 == str3); // true - string object is typecasted, value compare
+    console.log('str3 == str4', str3 == str4); // false - address compare
+
+    // address compare
+    console.log('compare 2 objects', { a: 10, b: 20 } == { a: 10, b: 20 });
+    console.log('compare 2 empty objects', {} == {});
+    console.log('compare 2 empty arrays', [] == []);
+
+    // eval
+    let str5 = '2+3+4';
+    let str6 = new String('2+3+4');
+    console.log(eval(str5)); // 9
+    console.log(eval(str6)); // String {'2+3+4'}
+
+    // convert string object to literal
+    let str7 = str6.valueOf(); // str7 is literal
+    console.log(eval(str7)); // 9
+</script>

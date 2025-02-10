@@ -1,0 +1,107 @@
+Arrow Function Benefits
+=======================
+-To use 'this' from the lexical Scope.
+-when a function is sused as callback, arrow function should be used
+
+
+Use Strict
+==========
+-provides better coding standard and stronger error checking.
+-'use strict' is only recognized at the beginning of a script or a function.
+-JavaScript modules are automatically in strict mode, with no statement needed to initiate it.(import/export)
+-The purpose of "use strict" is to execute the javascript in "strict mode".
+-when 'use strict' is not written, browser runs the JS in normal mode.
+-when 'use strict' is  written, browser runs the JS in strict mode.
+-in Normal mode few mistakes are ignored, in strict mode mistakes are not ignored
+
+1. variable declaration without var/let/const is not allowed.
+   makes it impossible to accidentally create global variables.
+2. function with duplicate arguements are not allowed.
+3. NaN/undefined/Infinity cann't be used as a variable name.
+4. Delete of an unqualified identifier in strict mode. 
+    ex:delete Object.prototype; 
+	var x = 5; delete x;
+5. Multiple assignments not allowed.
+   var a = b = c = 3;
+6. 'this' is undefined, when a function is invoked from Global Context in strict mode.
+
+
+
+String
+======
+-strings are used to represent and manipulate a sequence of characters.
+-JavaScript string is zero or more characters written inside quotes.
+-We can use single or double quotes for string. 
+	  var a='hello'; 
+	  var b="hello";
+-We can use quotes inside a string, as long as they don't match the quotes surrounding the string.
+	var answer1 = 'It's alright'; //in-valid
+	var answer1 = "It's alright"; //valid
+	var answer2 = "He is called 'Johnny'";  //valid
+	var answer3 = 'He is called "Johnny"'; // valid
+-Strings can be created in 2 ways
+	1. as primitives, using string literals; 
+	   var a = 'hello';
+	2. as objects, using the String() constructor
+	   var b = new String('hello');
+-JavaScript automatically converts primitives to String objects, so that it's possible 
+ to use String object methods for primitive strings.
+-String primitives and String objects give different results when using eval(). 
+ Primitives passed to eval are treated as source code; String objects are treated as all other objects are, by returning the object..
+	let s1 = '2 + 2'              // creates a string primitive
+	let s2 = new String('2 + 2')  // creates a String object
+	console.log(eval(s1))         // returns the number 4
+	console.log(eval(s2))         // returns the string "2 + 2"
+-A String object can always be converted to its primitive counterpart with the valueOf() method.
+	console.log(eval(s2.valueOf()))  // returns the number 4
+	
+
+1. literal
+   var str1 = "sachin";
+   typeof str1; //string
+
+2. object
+   var str2 = new String("sachin");    
+   typeof str2;   //"object"
+
+var a = "sachin";
+var b = "sachin"
+a == b; // true
+
+var a = "sachin";
+var b = new String("sachin")
+a == b; // true
+
+var a = new String("sachin");
+var b = new String("sachin");
+a == b;  // false
+
+
+
+String methods:
+--------------
+length;
+toUpperCase();
+toLowerCase();
+charAt();
+at()
+charCodeAt();
+concat();
+indexOf();
+lastIndexOf();
+includes();
+match();
+matchAll()   // returns iterator
+replace();
+replaceAll();
+repeat();
+slice(start, end)
+substring(start, end)
+substr(start, length)
+split()
+search(regex)
+trim()
+eval(); (eval() is from Window Object)
+localeCompare()
+
+N.p:- substring() cannot accept negative indexes. slice() does.
