@@ -1,0 +1,13 @@
+{
+    "name": "day_2_feb_6",
+    "version": "1.0.0",
+    "main": "addition.js",
+    "scripts": {
+      "start": "ng serve"
+      
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+  }
