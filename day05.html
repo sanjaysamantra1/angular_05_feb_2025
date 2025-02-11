@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+    <script>
+        // Reverse a string
+        let inputString = 'javascript';
+        console.log(typeof(inputString));
+        let reversedString = inputString.split('').reverse().join('');
+        console.log(reversedString);
+        document.write(`Reverse of ${inputString} is: ${reversedString} <br>`);
+
+        // Reverse words in a sentence
+        let sentence = "learning JavaScript is fun";
+        let reversedWords = sentence.split(' ').reverse().join(' ');
+        console.log(reversedWords);
+
+        // Find the first non-repeated character in a string
+        let text = "programming";
+        function firstUniqueChar(str) {
+            for (let char of str) {
+                if (str.indexOf(char) === str.lastIndexOf(char)) {
+                    return char;
+                }
+            }
+            return null;
+        }
+        let uniqueChar = firstUniqueChar(text);
+        console.log(uniqueChar);
+
+        // Convert string to title case
+        let titleCaseString = sentence.split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+        console.log(titleCaseString);
+
+        // Find the longest word in a sentence
+        let words = sentence.split(' ');
+        let longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+        console.log(longestWord);
+
+        // Mask Account Number
+        let accountNumber = '98765432109';
+        let maskedAccount = accountNumber.slice(0, 2) + '*'.repeat(accountNumber.length - 4) + accountNumber.slice(-2);
+        console.log(maskedAccount);
+
+        // Format Credit Card Number
+        let creditCardNumber = '5555666677778888';
+        let formattedCreditCard = creditCardNumber.match(/.{1,4}/g).join('-');
+        console.log(formattedCreditCard);
+
+        // Check if two strings are anagrams
+        function areAnagrams(str1, str2) {
+            return str1.split('').sort().join('') === str2.split('').sort().join('');
+        }
+        let word1 = 'triangle';
+        let word2 = 'integral';
+        console.log(areAnagrams(word1, word2));
+
+        // Remove special characters from a string
+        let specialString = 'hello@world!123';
+        let cleanedString = specialString.replace(/[^a-zA-Z0-9]/g, "");
+        console.log(cleanedString);
+
+        // Move all special characters to the end
+        let lettersAndNumbers = specialString.match(/[a-zA-Z0-9]/g) || [];
+        let specialChars = specialString.match(/[^a-zA-Z0-9]/g) || [];
+        let reorderedString = lettersAndNumbers.join('') + specialChars.join('');
+        console.log(reorderedString);
+    </script>
+</head>
+<body>
+</body>
+</html>
