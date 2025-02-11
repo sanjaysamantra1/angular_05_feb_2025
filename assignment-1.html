@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+// WAP to reverse a string
+	
+  //  let str = prompt("Enter name: ");
+  let str='siva';
+   console.log(typeof(str))
+    let x=str.split('').reverse().join('')
+    console.log(x)
+document.write(`Reverse of ${str} is : ${x} \n`);
+
+// WAP to reverse words
+let str1="this is javascript class";
+let reverse_str1=str1.split(' ').reverse().join(' ');
+console.log(reverse_str1);
+//WAP to print the first non-repeated character in a string
+let str2="entertainment";
+
+function nonrepeatedstr(str){
+    for(let c of str){
+        if (str.indexOf(c) == str.lastIndexOf(c)) {
+            return c;
+        }
+    }
+    return null;
+}
+
+let rep=nonrepeatedstr(str2);
+console.log(rep);
+
+let rep1=()=>{};
+//WAP to print a string in title case
+
+let str3= str1.split(' ')
+let str4=''
+for(let i=0;i<str3.length;i++){
+    let ss=str3[i]
+    str4=str4+ss[0].toUpperCase()+ss.slice(1)+' '
+}
+console.log(str4)
+// WAP to find longest word in a sentence
+let sp='';
+for(let i=0;i<str3.length;i++){
+if(sp.length<str3[i].length)
+{
+sp=str3[i]
+}
+}
+console.log(sp)
+//WAP to print Account number
+let acno='12345678989'
+let macno=acno.slice(0,2)+'*'.repeat(acno.length-4)+acno.slice(-2);
+console.log(macno)
+
+//WAP to print Credit-card number
+let cno='1111222233334444'
+let mcno=cno.slice(0,4)+'-'+cno.slice(4,8)+'-'+cno.slice(8,12)+'-'+cno.slice(-4)
+console.log(mcno)
+
+//WAP to check if 2 strings are anagram or not
+function checkanagram(str1,str2){
+    str1 = str1.split('').sort().join('');
+    str2 = str2.split('').sort().join('');
+    return str1==str2;
+}
+
+
+
+let an1='listen'
+let an2='silent'
+console.log(checkanagram(an1,an2))
+
+
+//WAP to remove special character from a string
+let ch='hello@#hi&'
+let ch1=ch.replace(/[^a-zA-Z0-9]/g, "")
+console.log(ch1)
+
+//WAP to move all the special characters to the end of the string
+let c1=ch.match(/[a-zA-Z0-9]/g) || []
+let c2=ch.match(/[^a-zA-Z0-9]/g) || []
+let c3=c1.join('')+c2.join('')
+console.log(c3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
