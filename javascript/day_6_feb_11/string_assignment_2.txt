@@ -24,7 +24,7 @@
 
 7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
     input: 'ABC'
-    output: ABC , ACB , BCA, BAC ...
+    output: ABC , ACB , BCA ,  BAC , CAB , CBA
 
 8. Ask user to enter a number and convert that to Roman value
    input:   9    12

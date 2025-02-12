@@ -1,0 +1,13 @@
+properties: 
+=============
+length , delete
+
+instance functions: 
+===================
+at(),concat(),entries(),every(),fill(),filter(),find(),findLast(),findIndex(),flat(),
+flatMap(),forEach(),includes(),indexOf(),join(),keys(),lastIndexOf(),map(),pop(),push()
+reduce(), reverse(), shift(),slice(),sort(),some(), splice(),unshift(),values()
+
+static functions : 
+===================
+from(),isArray(),of()

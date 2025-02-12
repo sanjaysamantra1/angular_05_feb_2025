@@ -1,0 +1,31 @@
+<script>
+    let arr = [10, 20, 30, 40, 50];
+    // find the sum of all the elements in the array
+    let sum = arr.reduce((prev, curr) => {
+        console.log(prev, curr)
+        return prev + curr;
+    }, 0);
+    console.log(sum);
+
+
+    let str = 'Hello';
+    // reverse the string using reduce()
+    let revStr = str.split('').reduce((rev, char) => {
+        return char + rev;
+    }, '');
+    console.log(revStr);
+
+
+    let myStr = 'entertainment';
+    // print char occurance using reduce()  o/p: {e:3,n:2,t:3,r:1....}
+    let charMap = myStr.split('').reduce((map, char) => {
+        if (map[char]) {
+            map[char] = map[char] + 1;
+        } else {
+            map[char] = 1;
+        }
+        return map;
+    }, {});
+    console.log(charMap);
+
+</script>
