@@ -1,123 +1,105 @@
-// 1. WAP to reverse a string
-// 	input:- 'sachin'
-// 	output:- 'nihcas'
-
-// 2. WAP to reverse words
-// 	input:- 'This is javascript class'
-// 	output:- 'class javascript is this'
-
-// 3. WAP to print the first non-repeated character in a string
-//    input:- 'entertainment'
-//    output:- r
-   
-// 4. WAP to print a string in title case
-// 	input:- 'this is javascript class'
-//    output:- 'This Is Javascript Class'
-	
-// 5. WAP to find longest word in a sentence
-// 	input:- 'this is javascript class'
-//     output:- javascript
-	
-// 6. WAP to print Account number
-//    input:- '12345678987'
-//    output:- '12*******87'
-   
-// 7. WAP to print Credit-card number
-//    input:- '1111222233334444'
-//    output:- '1111-2222-3333-4444'
-   
-// 8. WAP to check if 2 strings are anagram or not
-// 	'listen' - 'silent'    anagram(every char of str1 should be there in str2)
-	
-// 9. WAP to remove special character from a string
-//    input:- 'hello@#hi&'
-//    output:- 'hellohi'
-   
-// 10. WAP to move all the special characters to the end of the string
-// 	input:- 'hello@#hi&'
-//    output:- 'hellohi@#&'
-	 
+// 1. Print the occurence of each character in a string
+//    input: 'entertainment'
+//    output: { e:3 , n:2 , t: 3 ....}
+// 2. Print the character which is repeated max no of times
+//    input: 'hello world'
+//    output : 'L'
+// 3. Swap The case for Each Character in a string 
+//    input: 'Hello World'
+//    output: 'hELLO wORLD'
+// 4. Print the Abbreviation for a string
+//    input: 'Rabindra Nath Tagore'
+//    output: 'R. N. tagore'
+// 5. Shift the characters by the next character
+//    input:  'abcxyz'
+//    output: 'bcdyza'
+// 6. Ask user to enter a sequence of parantheses and validate 
+//    input: '([{ }])'
+//    output : true
+// 7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
+//     input: 'ABC'
+//     output: ABC , ACB , BCA, BAC ...
+// 8. Ask user to enter a number and convert that to Roman value
+//    input:   9    12
+//    output : IX   XII
+// 9. Ask user to enter a roman string and convert that to integer value
+//    input:   IX    XII
+//    output : 9     12
 
 
+//1-------------------------------------------------------------------------------------------------------
+const input = "entertainment";
+const charCount = {};
 
-//1-----------------------------------------------------------------------------------------------------------------
-let str = "sachin";
-let reversedStr = str.split('').reverse().join('');
-console.log(reversedStr);
+for (const char of input) {
+    charCount[char] = input.split(char).length - 1;
+}
 
-//2-----------------------------------------------------------------------------------------------------------------
-let str2 = 'This is javascript class';
-// Split the string into an array of words, reverse the array, and join the words back into a string
-let revStr = str2.split(' ').reverse().join(' ');
-console.log(revStr);  // Output: 'class javascript is This'
+console.log(charCount);
+//The string "entertainment" is split at every "e".It results in 4 parts: ['', 'nt', 'rtainm', 'nt'].Since "e" appeared 3 times, the number of parts is 4.The count of "e" is split("e").length - 1 = 4 - 1 = 3, Loop through each character in "entertainment".
 
-//3-----------------------------------------------------------------------------------------------------------------
-let str3 = 'entertainment'; // r
-    
-    for(char of str3)
-    {
-        if(str3.indexOf(char) == str3.lastIndexOf(char)){
-            console.log(char); // prints the non repeated chars in string as their first index and last index of that char will be same as they are only once in that string
-            break; //if we need only first non repeated char , we can use break and cut the loop
-        }
-    }
 
-//4-----------------------------------------------------------------------------------------------------------------
-let str4 = "this is javascript class";
-let titleCaseStr = str4.replace(/\b\w/g, char => char.toUpperCase());
-//\b: Word boundary, matches the first letter of each word. \w: Matches any word character (letters, numbers, etc.).  char => char.toUpperCase(): Converts the first character of each word to uppercase.
-console.log(titleCaseStr); // Output: This Is Javascript Class
+//2----------------------------------------------------------------------------------------------------------
+const input2 = "hello world".toLowerCase().replace(/ /g, "");
+let maxChar = "";
+let maxCount = 0;
 
-//5-----------------------------------------------------------------------------------------------------------------
-let str5 = "this is javascript class";
-let words = str5.split(" "); //where ever there is a space, it splits the words
-let longestWord = "";
-
-for (let word of words) {
-    if (word.length > longestWord.length) {
-        longestWord = word;
+for (let char of input2) { // Loop through unique characters
+    let count = input2.split(char).length - 1; // Count occurrences using split()
+    if (count > maxCount) {
+        maxCount = count;
+        maxChar = char;
     }
 }
-console.log(longestWord); // Output: javascript
 
-//6-----------------------------------------------------------------------------------------------------------------
-let accountNumber = "12345678987";
-let maskedNumber = accountNumber.substring(0, 2) + "*******" + accountNumber.substring(accountNumber.length - 2);
+console.log(maxChar.toUpperCase()); // Output: L
 
-console.log(maskedNumber); // Output: 12*******87
 
-//7-----------------------------------------------------------------------------------------------------------------
-let num = "1111222233334444";
-let formatted = num.match(/.{1,4}/g).join('-');
-console.log(formatted); // Output: 1111-2222-3333-4444
+//3---------------------------------------------------------------------------------------------------------
+const input3 = "Hello World";
 
-//8-----------------------------------------------------------------------------------------------------------------
-let str7 = 'listen';
-let str8 = 'silent';
-function areAnagrams(str7, str8) {
-    // Sort both strings and compare
-    return str7.split('').sort().join('') === str8.split('').sort().join('');
+const output = input3.split('').map(char => 
+    char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase() ) .join('');
+
+console.log(output); // Output: hELLO wORLD
+
+
+//4---------------------------------------------------------------------------------------------------------
+const input4 = 'Rabindra Nath Tagore';
+const words = input4.split(' ');
+
+const abbreviation = words.map((word, index) => 
+    index < words.length - 1 ? word[0].toUpperCase() + '.' : word.toLowerCase()).join(' '); // ("Rabindra", "Nath", "Tagore"). (0 for "Rabindra", 1 for "Nath", and 2 for "Tagore").
+
+console.log(abbreviation); // Output: R. N. tagore
+
+
+//5---------------------------------------------------------------------------------------------------------
+const input5 = 'abcxyz';
+let output5 = '';
+
+for (let char of input5) {
+    // Check if the character is 'z', if so, wrap it around to 'a'
+    if (char === 'z') {
+        output5 += 'a';
+    } else {
+        output5 += String.fromCharCode(char.charCodeAt(0) + 1); //ASCII values of the char, we shift them to next char
+    }
 }
-console.log(areAnagrams(str7, str8));
 
-//9-----------------------------------------------------------------------------------------------------------------
-let str9 = 'hello@#hi&';
-let result = removeSpecialCharacters(str9);
-function removeSpecialCharacters(str9) {
-    // Replace all non-alphanumeric characters with an empty string
-    return str9.replace(/[^a-zA-Z0-9]/g, '');
-}
-console.log(result);
+console.log(output5); // Output: bcdyza
 
-//10-----------------------------------------------------------------------------------------------------------------
-let str10 = 'hello@#hi&';
-let reslt = moveSpecialCharsToEnd(str10);
-function moveSpecialCharsToEnd(str10) {
-    // Filter alphanumeric characters and special characters
-    let letters = str10.replace(/[^a-zA-Z0-9]/g, '');
-    let specialChars = str10.replace(/[a-zA-Z0-9]/g, '');
-    
-    // Combine letters and special characters
-    return letters + specialChars;
+
+//6-------------------------------------------------------------------------------------------------------------
+function validateParentheses(str) {
+    while (str.includes("()") || str.includes("{}") || str.includes("[]")) {   //let str = "ab(cd)()ef";  str = str.split("()").join("");  // Output: "ab(cd)ef"  (Removes "()")
+    str = str.split("()").join("")
+             .split("{}").join("")
+             .split("[]").join("");
+    }
+    return str.length === 0;
 }
-console.log(reslt);
+console.log(validateParentheses("({[]})")); // Output: true
+
+
+//7------------------------------------------------------------------------------------------------------------
