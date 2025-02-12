@@ -1,0 +1,118 @@
+<script>
+    //1 . reverse a string
+    function reverse_string(){
+    var str = "nandini";
+    let st='';
+    for(var i=str.length-1;i>=0;i--){
+       st +=str[i];
+    }
+    console.log("reversing string",st);
+    }   
+    reverse_string();
+
+    //2 . WAP to reverse words
+
+    function reverse_words(){
+    var s= "jaca script is fun"
+    let st1 =s.split(' ').reverse().join(' ');
+    console.log("reverse words in a sentence",st1);
+    }
+   reverse_words();
+    
+   /*
+   3. WAP to print the first non-repeated character in a string
+   input:- 'entertainment'
+   output:- r
+   */
+    function firstUniqueChar(str) {
+         for (let char of str) {
+            if (str.indexOf(char) === str.lastIndexOf(char)) {
+               return char;
+            }
+         }
+         return null; // If no unique character is found
+      }
+
+      // Test the function
+      console.log(firstUniqueChar("entertainment")); // Output: r
+
+   
+    /*    
+    4. WAP to print a string in title case
+	   input:- 'this is javascript class'
+       output:- 'This Is Javascript Class'
+    */
+   function title_case(){
+     var st4 = 'this is javascript class';
+       return st4.split(' ')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+         .join(' ');
+   }
+   let title=  title_case();
+   console.log(title);
+
+  /*
+   	
+   5. WAP to find longest word in a sentence
+	  input:- 'this is javascript class'
+      output:- javascript
+  */
+   function Long_Word(){
+    let str5= "this is javascript class";
+    let str_split=str5.split(' ');
+    let st='';
+    for(let s of str_split){
+        if(s.length>st.length){
+            st=s;
+        }
+    }
+    console.log("longest word: ",st);
+   }
+
+   Long_Word();
+
+
+   //6. WAP to print Account number
+   // input: - '12345678987'
+   // output: - '12*******87'
+
+   let account_number = '12345678987';
+   let ac=   account_number.slice(0, 2) + '*'.repeat(account_number.length - 4) + account_number.slice(-2);
+   console.log("Account number",ac);
+   /*
+   7. WAP to print Credit-card number
+   input:- '1111222233334444'
+   output:- '1111-2222-3333-4444'*/
+   let cardNumber= '1111222233334444';
+   let credit_card = cardNumber.match(/.{1,4}/g).join('-')
+   console.log("credit card number",credit_card);
+   /* 
+   8. WAP to check if 2 strings are anagram or not
+	'listen' - 'silent'    anagram(every char of str1 should be there in str2)
+   */
+   function anagrams(str1,str2)
+   {
+     return str1.split('').sort().join('') === str2.split('').sort().join('');
+   }
+   console.log(anagrams("listen", "silent") ? "Anagram" : "Not Anagram");
+
+   /*
+   9. WAP to remove special character from a string
+   input:- 'hello@#hi&'
+   output:- 'hellohi'
+   */
+  let sp_string = 'hello@#hi&';
+  let sp= sp_string.replace(/[^a-zA-Z0-9]/g, '');
+  console.log(sp);
+
+  /*
+   10. WAP to move all the special characters to the end of the string
+	input:- 'hello@#hi&'
+   output:- 'hellohi@#&'
+  */
+  //str.replace(/[^a-zA-Z0-9]/g, '') + str.replace(/[a-zA-Z0-9]/g, '')
+
+let st_character = 'hello@#hi&';
+console.log(st_character.replace(/[^a-zA-Z0-9]/g, '') + st_character.replace(/[a-zA-Z0-9]/g, ''));
+   
+</script>
