@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+/*
+1. Print the occurence of each character in a string
+   input: 'entertainment'
+   output: { e:3 , n:2 , t: 3 ....}
+*/
+let input='entertainment'
+let out = {};
+
+for (let char of input) {
+    out[char] = (out[char] || 0) + 1;
+}
+
+console.log(out);
+
+/*
+Print the character which is repeated max no of times
+   input: 'hello world'
+   output : 'L'
+   */
+   function findMaxRepeatedChar(str) {
+    let str2 = {};
+    str = str.toLowerCase();
+
+    for (let char of str) {
+        if(char !=' ')
+            str2[char] = (str2[char] || 0) + 1;
+}
+let maxc='',max=0;
+for(let m in str2){
+    if(str2[m]>max){
+    maxc=m;
+        max=str2[m];
+}
+}
+console.log("Most repeated character:", maxc.toUpperCase());
+}
+
+
+let str1='hello world'
+findMaxRepeatedChar(str1)
+
+//3. Swap The case for Each Character in a string 
+let str3='Hello World';
+function swapthecase(str){
+let str4=str.split('').reduce((map,prev)=>{
+    if (prev === prev.toUpperCase()) {
+            map += prev.toLowerCase();
+        } else {
+            map += prev.toUpperCase();
+        }
+        return map;
+},"");
+return str4;
+}
+
+console.log(swapthecase(str3))
+
+
+/*4. Print the Abbreviation for a string
+   input: 'Rabindra Nath Tagore'
+   output: 'R. N. tagore'*/
+
+   let inp1='Rabindra Nath Tagore'
+let word=inp1.split(' ');
+let abb=word.map((w,i)=> {
+    if(i<word.length -1){
+    return w.charAt(0).toUpperCase() + '.';
+    }else{
+    return w.toLowerCase();
+    }
+}).join(' ');
+console.log(abb);
+/*
+5. Shift the characters by the next character
+   input:  'abcxyz'
+   output: 'bcdyza'
+*/
+let inp2='abcxyz'
+let out2=inp2.split('').map(e=>  
+{ let code =e.charCodeAt(0);
+return String.fromCharCode((code -97 +1 )% 26 +97)
+}).join('');
+console.log(out2);
+
+
+/*6. Ask user to enter a sequence of parantheses and validate 
+   input: '([{ }])'
+   output : true
+ */
+let input_parathases='([{ }])'
+
+let stack = [];
+let isValid = true;
+let pairs = { '(': ')', '{': '}', '[': ']' };  // Matching pairs of parentheses
+
+for (let char of input_parathases) {
+    if (pairs[char]) {
+        // If the character is an opening parenthesis, push it onto the stack
+        stack.push(char);
+    } else if (Object.values(pairs).includes(char)) {
+        // If the character is a closing parenthesis
+        let top = stack.pop();
+        if (pairs[top] !== char) {
+            isValid = false;  // If the top doesn't match the current closing parenthesis
+            break;
+        }
+    }
+}
+
+if (stack.length === 0 && isValid) {
+    console.log(true);  // Valid if the stack is empty and no mismatched parentheses were found
+} else {
+    console.log(false);  // Invalid if there are unmatched parentheses
+}
+
+/*7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
+    input: 'ABC'
+    output: ABC , ACB , BCA ,  BAC , CAB , CBA
+*/let str='ABC'
+function permutations(str, prefix = '') {
+    if (str.length === 0) console.log(prefix);
+    for (let i = 0; i < str.length; i++) {
+        permutations(str.slice(0, i) + str.slice(i + 1), prefix + str[i]);
+    }
+}
+permutations(str);
+
+
+/*8. Ask user to enter a number and convert that to Roman value
+   input:   9    12
+   output : IX   XII
+*/
+function convertToRoman(n) {
+    let value = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    let numeral = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+    let res = '';
+    for (let i = 0; i < value.length; i++) {
+        while (n >= value[i]) {
+            res += numeral[i];
+            n -= value[i];
+        }
+    }
+    return res;
+}
+
+console.log(convertToRoman(9));
+console.log(convertToRoman(12));
+
+
+/*9. Ask user to enter a roman string and convert that to integer value
+   input:   IX    XII
+   output : 9     12*/
+
+function ConvertFromRoman(st) {
+    let val = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 };
+    let tot = 0;
+    for (let i = 0; i < st.length; i++) {
+        let cur = val[st[i]];
+        let next = val[st[i + 1]];
+        tot += next && cur < next ? -cur : cur;
+    }
+    return tot;
+}
+
+console.log(ConvertFromRoman('IX'));
+console.log(ConvertFromRoman('XII'));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
