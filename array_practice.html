@@ -1,0 +1,69 @@
+<script>
+    let employees = [
+        { id: 201, name: 'Arjun', salary: 6000, gender: 'male' },
+        { id: 202, name: 'Meera', salary: 7500, gender: 'female' },
+        { id: 203, name: 'Kabir', salary: 6800, gender: 'male' },
+        { id: 204, name: 'Anika', salary: 8200, gender: 'female' },
+        { id: 205, name: 'Rohan', salary: 7200, gender: 'male' }
+    ];
+    
+    // 1. Sort employees in ascending order by ID
+    let sortedById = [...employees].sort((a, b) => a.id - b.id);
+    console.log(sortedById);
+    
+    // 2. Sort employees in ascending order by name
+    let sortedByName = [...employees].sort((a, b) => a.name.localeCompare(b.name));
+    console.log(sortedByName);
+    
+    // 3. Filter employees with salary greater than 7000
+    let highSalaryEmployees = employees.filter(emp => emp.salary > 7000);
+    console.log(highSalaryEmployees);
+    
+    // 4. Increase salary of every employee by 500
+    let updatedSalaries = employees.map(emp => ({ ...emp, salary: emp.salary + 500 }));
+    console.log(updatedSalaries);
+    
+    // 5. Add company information to each employee
+    let employeesWithCompany = employees.map(emp => ({ ...emp, company: "TechCorp" }));
+    console.log(employeesWithCompany);
+    
+    // 6. Convert array of letters to array of words
+    const lettersArray = ['c', 'o', 'd', 'e', '', 'm', 'o', 'r', 'e', '', 'e', 'a', 's', 'y'];
+    let words = lettersArray.join('').split(' ').filter(word => word !== '');
+    console.log(words);
+    
+    // 7. Add department info for each employee
+    let departments = [
+        { id: 201, dept: "Engineering" },
+        { id: 202, dept: "HR" }
+    ];
+    let employeesWithDept = employees.map(emp => {
+        let deptInfo = departments.find(d => d.id === emp.id)?.dept || "Unknown";
+        return { ...emp, department: deptInfo };
+    });
+    console.log(employeesWithDept);
+    
+    // 8. Group employees by name
+    let groupedByName = employees.reduce((acc, emp) => {
+        acc[emp.name] = acc[emp.name] || [];
+        acc[emp.name].push(emp);
+        return acc;
+    }, {});
+    console.log(groupedByName);
+    
+    // 9. Find intersection of two number arrays
+    let array1 = [5, 10, 15, 20, 25];
+    let array2 = [15, 20, 30, 40];
+    let commonNumbers = array1.filter(num => array2.includes(num));
+    console.log(commonNumbers);
+    
+    // 10. Count occurrences of each element in an array
+    const numbersArray = [5, 10, 15, 5, 20, 10, 15, 5];
+    let occurrences = numbersArray.reduce((acc, num) => {
+        acc[num] = (acc[num] || 0) + 1;
+        return acc;
+    }, {});
+    console.log(occurrences);
+    
+    </script>
+    
