@@ -1,0 +1,15 @@
+let cars = new Set();
+cars.add('Tata');
+cars.add('Honda');
+cars.add('Maruti');
+cars.add('Hundai');
+cars.add('Tata');
+cars.add('Maruti');
+cars.add('Hundai');
+cars.add('Honda');
+cars.add('Tata');
+cars.add('Maruti');
+cars.add('Hundai');
+cars.add('Honda');
+console.log(cars);
+console.log(cars.size);
