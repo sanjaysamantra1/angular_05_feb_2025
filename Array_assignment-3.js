@@ -60,7 +60,7 @@ let employee1 = [
   ];
   
   let groupedEmployees = employee1.reduce((acc, emp) => {
-    acc[emp.name] = acc[emp.name]  []; // If name doesn't exist, initialize with an empty array
+    acc[emp.name] = acc[emp.name] || []; // If name doesn't exist, initialize with an empty array
     acc[emp.name].push(emp); // Push employee object into the respective group
     return acc;
   }, {});
