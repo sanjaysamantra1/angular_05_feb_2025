@@ -1,0 +1,114 @@
+
+  
+  <script>
+let employees = [
+    { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
+    { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
+    { eId: 103, name: 'sameer', sal: 7000, gender: 'male' },
+    { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
+	{ eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
+  ];
+  
+  //By employee Id
+  let ascendingId=employees.slice().sort((emp1,emp2)=> emp1.eId-emp2.eId);
+
+  console.log(ascendingId);
+
+
+  
+  //By employee name
+  let ascendingName=employees.slice().sort((emp1,emp2)=>emp1.name.localeCompare(emp2.name));
+  console.log(ascendingName);
+
+
+let sortedEmployees= employees.filter(emp => emp.sal>6000);
+sortedEmployees.sort((emp1,emp2)=>emp1.sal-emp2.sal);
+console.log(sortedEmployees);
+
+
+let salaryIncrement= employees.map(emp=> ({...emp,sal:emp.sal+500}));
+console.log(salaryIncrement);
+
+
+let empAddColumn= employees.map(emp=> ({...emp,comp:"ibm"}));
+console.log(empAddColumn);
+
+
+6. 
+		const inputArr = [ 
+				'b', 'a', 'k', 'e', '',
+				'c', 'a', 'k', 'e', '',
+				'e', 'a', 't'
+				];
+	
+      let output=[];
+      let currentWord='';
+
+      for(let i=0;i<inputArr.length;i++){
+        if(inputArr[i]!==''){
+            currentWord=currentWord+inputArr[i];
+        }
+        else{
+            if(currentWord){
+                output.push(currentWord);
+                currentWord='';
+            }
+        }
+      }
+      if(currentWord){
+        output.push(currentWord);
+
+      }
+
+      console.log(output);
+
+
+     let employees1 = [{eId: 101, name: "sanjay", sal: 5000, gender: "male" },
+				{ eId: 104, name: "reena", sal: 8000, gender: "female" }]
+	let departments = [{ eId: 101, dept: "sales" },
+				{ eId: 104, dept: "marketing" }]
+
+                
+    employees1.forEach(employee => {
+  let dept = departments.find(d => d.eId === employee.eId);
+  employee.dept = dept ? dept.dept : 'No department'; 
+});
+
+ console.log(employees1);
+
+
+ let array1 = [1, 2, 3, 4, 5];
+let array2 = [4, 5, 6, 7, 8];
+
+let intersectionArr= [...new Set(array1.filter(item=> array2.includes(item)))];
+console.log(intersectionArr);
+
+
+inputIntArr = [10,20,30,40,50,10,30,50];
+let occurrences = inputIntArr.reduce((acc, num) => {
+  acc[num] = (acc[num] || 0) + 1; 
+  return acc;
+}, {});
+
+
+console.log(occurrences);
+
+let newEmployees = [
+  { eId: 101, name: "sanjay", sal: 5000, gender: "male" },
+  { eId: 102, name: "alok", sal: 7000, gender: "male" },
+  { eId: 103, name: "sanjay", sal: 6000, gender: "male" },
+  { eId: 104, name: "reena", sal: 8000, gender: "female" },
+  { eId: 105, name: "sanjay", sal: 5500, gender: "male" }
+];
+let groupByName={};
+
+newEmployees.forEach(employee =>{
+    if(!groupByName[employee.name]) {
+        groupByName[employee.name] = [];
+    }
+    groupByName[employee.name].push(employee);
+});
+console.log(groupByName);
+
+
+  </script>
