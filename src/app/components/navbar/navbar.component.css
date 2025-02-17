@@ -1,0 +1,13 @@
+.top-header {
+    background: linear-gradient(to right, #FF9933, #FFFFFF, #138808); /* Indian Flag Colors */
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .header-text {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  
