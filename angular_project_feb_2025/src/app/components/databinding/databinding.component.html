@@ -1,0 +1,50 @@
+<div class="text-center">
+    Let's Learn Data Binding
+</div>
+<div class="border p-2">
+    <div>Name is : {{myName}}</div>
+    <div>Name is : <span [innerHTML]="myName"></span></div>
+    <div>Name is : <span bind-innerHTML="myName"></span></div>
+    <hr />
+    <img src="https://documents.bcci.tv/resizedimageskirti/164_compress.png" alt="">
+    <img src="{{profile_url}}" alt="" class="mx-2">
+    <img [src]="profile_url" alt="" class="mx-2">
+    <img bind-src="profile_url" alt="" class="mx-2">
+    <hr />
+    <div>
+        Plain HTML: <input value='Virat Kohli' placeholder="Enter Your Name" />
+    </div>
+    <div>
+        Interpolation(1-way) : <input value='{{myName}}' placeholder="Enter Your Name" class="mx-2" />
+    </div>
+    <div>
+        Property(1-way) : <input [value]='myName' placeholder="Enter Your Name" class="mx-2" />
+    </div>
+    <div>
+        Property(1-way) : <input bind-value='myName' placeholder="Enter Your Name" class="mx-2" />
+    </div>
+    <div>
+        2-way : <input [(ngModel)]='myName' placeholder="Enter Your Name" class="mx-2" />
+    </div>
+    <div>
+        2-way : <input bindon-ngModel='myName' placeholder="Enter Your Name" class="mx-2" />
+    </div>
+    <hr />
+    <button class="btn btn-primary mx-2">Click Me</button>
+    <button class="btn btn-primary mx-2" disabled="true">Click Me</button>
+    InterPolation:
+    <button class="btn btn-primary mx-2" disabled="{{flag}}">Click Me</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
+    <button class="btn btn-primary mx-2" bind-disabled="flag">Click Me</button>
+    <hr />
+    <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+    <div>Addition of <span [innerHTML]="num1"></span> and
+        <span [innerHTML]="num2"></span> is <span [innerHTML]="num1+num2"></span>
+    </div>
+    <hr />
+    <div>
+        Event Binding:
+        <button class="btn btn-success mx-2" (click)="sayHello()">Say Hello</button>
+        <button class="btn btn-success mx-2" on-click="sayHello()">Say Hello</button>
+    </div>
+</div>
