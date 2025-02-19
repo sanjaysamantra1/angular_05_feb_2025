@@ -1,0 +1,99 @@
+<h3 class="text-center">Let's Learn Directives</h3>
+<div class="border p-2">
+    <div>
+        Before Angular-17:
+        <ng-template *ngIf="age>=18;then eligible; else notEligible">
+        </ng-template>
+        <ng-template #eligible>
+            <p>
+                {{age}} is Eligible for voting
+            </p>
+        </ng-template>
+        <ng-template #notEligible>
+            <p>
+                {{age}} is not Eligible for voting
+            </p>
+        </ng-template>
+        <ng-template #notEligible>
+            You are not Eligible for voting
+        </ng-template>
+    </div>
+    <div>
+        After Angular-17:
+        @if(age>=18){
+            <h4>You are Eligible for voting</h4>
+        }@else{
+            <h4>You are not Eligible for voting</h4>
+        }
+    </div>
+    <div class="border p-2">
+        <h3>if vs Hidden</h3>
+        <button class="btn btn-primary" (click)="flag=!flag">Toggle</button>
+        @if(flag){
+            <p>Hellooooooooooooooooooooooooooooo-1</p>
+        }
+        <p [hidden]="!flag">Hellooooooooooooooooooooooooooooo-2</p>
+        <p>Flag value is: {{flag}}</p>
+    </div>
+    <hr/>
+    <div>
+        <h4>Day Number: {{dayNumber}}</h4>
+        @switch (dayNumber) {
+            @case (1) { <h4>Monday</h4> }
+            @case (2) { <h4>Tuesday</h4> }
+            @case (3) { <h4>Wednesday</h4> }
+            @case (4) { <h4>Thursday</h4> }
+            @case (5) { <h4>Friday</h4> }
+            @case (6) { <h4>Saturday</h4> }
+            @case (7) { <h4>Sunday</h4> }
+            @default { <h4>Not a Valid number</h4>> }
+        }
+    </div>
+    <hr/>
+    <div>
+       <ol>
+            @for(state of stateNames;track $index){
+                <li>{{state}}</li>
+            }
+       </ol>
+       <div  class="m-2">
+        DropDown:
+        <select>
+             @for(state of stateNames;track $index){
+                 <option>{{state}}</option>
+             }
+        </select>
+       </div>
+       <div>
+            Datalist:
+            <input list="states" name="abc" id="xyz">
+            <datalist id="states">
+                @for(state of stateNames;track $index){
+                    <option>{{state}}</option>
+                }
+            </datalist>
+       </div>
+    </div>
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Emp id</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(emp of employees;track $index){
+                    <tr>
+                        <td>{{emp.eId}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.sal}}</td>
+                        <td>{{emp.gender}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
