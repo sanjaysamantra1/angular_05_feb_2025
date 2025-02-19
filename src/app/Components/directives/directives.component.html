@@ -1,0 +1,21 @@
+<p>directives works!</p>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Emp id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(emp of employees;track $index){
+    <tr>
+      <td>{{ emp.eId }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.sal }}</td>
+      <td>{{ emp.gender }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
