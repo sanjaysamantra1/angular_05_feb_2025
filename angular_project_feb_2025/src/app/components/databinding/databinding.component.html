@@ -1,7 +1,16 @@
+<style>
+    img{
+        border: 2px solid red;
+        border-radius: 10px;
+    }
+</style>
 <div class="text-center">
     Let's Learn Data Binding
 </div>
 <div class="border p-2">
+    @let firstName = user.fName;
+    <p>Users first name is: {{firstName}}</p>
+    <p>Users first name is: {{firstName}}</p>
     <div>Name is : {{myName}}</div>
     <div>Name is : <span [innerHTML]="myName"></span></div>
     <div>Name is : <span bind-innerHTML="myName"></span></div>
@@ -9,6 +18,7 @@
     <img src="https://documents.bcci.tv/resizedimageskirti/164_compress.png" alt="">
     <img src="{{profile_url}}" alt="" class="mx-2">
     <img [src]="profile_url" alt="" class="mx-2">
+    <img [attr.src]="profile_url" alt="" class="mx-2">
     <img bind-src="profile_url" alt="" class="mx-2">
     <hr />
     <div>
@@ -19,6 +29,9 @@
     </div>
     <div>
         Property(1-way) : <input [value]='myName' placeholder="Enter Your Name" class="mx-2" />
+    </div>
+    <div>
+        Attribute(1-way) : <input [attr.value]='myName' placeholder="Enter Your Name" class="mx-2" />
     </div>
     <div>
         Property(1-way) : <input bind-value='myName' placeholder="Enter Your Name" class="mx-2" />
@@ -37,14 +50,84 @@
     <button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
     <button class="btn btn-primary mx-2" bind-disabled="flag">Click Me</button>
     <hr />
-    <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+    <!-- <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
     <div>Addition of <span [innerHTML]="num1"></span> and
         <span [innerHTML]="num2"></span> is <span [innerHTML]="num1+num2"></span>
-    </div>
+    </div> -->
     <hr />
     <div>
         Event Binding:
         <button class="btn btn-success mx-2" (click)="sayHello()">Say Hello</button>
         <button class="btn btn-success mx-2" on-click="sayHello()">Say Hello</button>
+    </div>
+    <div>
+        Assignment-1: <br />
+        <h1>Helloooooo, Good Morning</h1>
+        <button class="btn btn-primary">SHOW/HIDE</button>
+    </div>
+    <div>
+        <!--  <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th [attr.colspan]="colspanValue" style="text-align: center;">User Name</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ramana</td>
+                    <td>Kumar</td>
+                    <td>28</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Sanjay </td>
+                    <td>Samantra</td>
+                    <td>55</td>
+                    <td>India</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th [colSpan]="colspanValue" style="text-align: center;">User Name</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ramana</td>
+                    <td>Kumar</td>
+                    <td>28</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Sanjay </td>
+                    <td>Samantra</td>
+                    <td>55</td>
+                    <td>India</td>
+                </tr>
+            </tbody>
+        </table> -->
+    </div>
+    <div>
+        <p>Addition using 2 way binding:</p>
+        <p>Num1 : <input type="text" [(ngModel)]="num1"></p>
+        <p>Num1 : <input type="text" [(ngModel)]="num2"></p>
+        <p>Addition of {{num1}} and {{num2}} is {{+num1 + +num2}}</p>
+    </div>
+    <div>
+        <p>Addition using Template reference:</p>
+        <p>Num1: <input #inputBox1 /></p>
+        <p>Num2: <input ref-inputBox2 /></p>
+        <button class="btn btn-primary" (click)="addition(inputBox1.value , inputBox2.value)">Add</button>
+        <p style="color:brown">Addition is {{additionResult}}</p>
+    </div>
+    <div>
+        <textarea [(ngModel)]="msg" maxlength="100"></textarea>
+        <div style="color:brown">Remaining Chars : {{100 - msg.length}}</div>
     </div>
 </div>
