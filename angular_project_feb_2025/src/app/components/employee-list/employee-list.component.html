@@ -1,0 +1,49 @@
+<h2 class="text-center">Employee List</h2>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.eId}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.sal}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Sl#</th>
+                    <th>eId</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>sal</th>
+                    <th>isFirst?</th>
+                    <th>isLast?</th>
+                    <th>isEven?</th>
+                    <th>isOdd?</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(employee of employees;track employee.eId){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{employee.eId}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.sal}}</td>
+                    <td>{{$first}}</td>
+                    <td>{{$last}}</td>
+                    <td>{{$even}}</td>
+                    <td>{{$odd}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-primary" (click)="updateEmployeeData()">Click Me</button>
+</div>

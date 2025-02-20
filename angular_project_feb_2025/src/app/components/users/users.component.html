@@ -1,0 +1,58 @@
+<h2 class="text-center">Users</h2>
+
+<div class="container">
+    <div class="row">
+        @for (entry of userMap; track $index){
+            <div>{{entry[0]}} === {{entry[1]}}</div>
+        }
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for(user of users;track $index){
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address.city}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        
+    </div>
+    <hr />
+    <div class="row">
+        @for(user of users | paginate: { itemsPerPage: 4, currentPage: p };track $index){
+        <div class="col-sm-3">
+            <div class="card text-center">
+                <img class="card-img-top"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjI5Cdcq6ocwEbSR5jvM_aUeckl8VBQMUnL6vWu83kmWKaodh9scTAitMD6sC7vv77n_E&usqp=CAU"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{user.username}}</h5>
+                    <p class="card-text">{{user.id}}</p>
+                    <p class="card-text">{{user.name}}</p>
+                    <p class="card-text">{{user.email}}</p>
+                    <p class="card-text">{{user.phone}}</p>
+                    <p class="card-text">{{user.address.city}}</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+        }
+        @empty {
+        No Users Found
+        }
+        <div class="col-sm-4 offset-4 mt-3">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
