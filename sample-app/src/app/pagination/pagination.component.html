@@ -1,0 +1,33 @@
+<div class="search-sort-container">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by title..." class="search-bar">
+    
+    <select [(ngModel)]="sortOrder" (change)="sortProducts()" class="sort-dropdown">
+        <option value="">Sort by Price</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+    </select>
+</div>
+
+<div class="card-container">
+    <div class="card" *ngFor="let product of filteredProducts() | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <img [src]="product.image" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-category"><strong>Category:</strong> {{ product.category }}</p>
+            <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+            
+            <div class="rating">
+                <span *ngFor="let star of [1,2,3,4,5]; let i = index" 
+                      [class.filled]="i < product.rating.rate">
+                    ★
+                </span>
+                <span class="rating-value">({{ product.rating.rate }})</span>
+            </div>
+
+            <p class="card-text description">{{ product.description }}</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

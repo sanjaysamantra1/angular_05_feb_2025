@@ -1,0 +1,11 @@
+.navbar-brand img {
+    width: 90px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-right: 10px; /* Adds space between image and text */
+    transition: transform 0.5s ease-in-out; /* Adds a hover effect */
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
+}

@@ -1,0 +1,10 @@
+.center-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 30vh; /* Full height of viewport */
+}
+.image-image {
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto;
+}

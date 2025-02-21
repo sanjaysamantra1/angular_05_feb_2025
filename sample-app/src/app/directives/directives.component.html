@@ -1,0 +1,42 @@
+<div class="table p-2">
+    <div class="d-flex justify-content-center my-3">
+        <button type="button" class="btn btn-primary" (click)="func()">Switch to {{ text }} View</button>
+      </div>
+      
+    @if(text=='Table'){
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees;track $index){
+            <tr>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.phone }}</td>
+                <td>{{ emp.email }}</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+    }@else{
+    <div class="card-container">
+        @for(emp of employees;track $index){
+        <div class="card">
+            <h3>{{ emp.name }}</h3>
+            <p><strong>ID:</strong> {{ emp.id }}</p>
+            <p><strong>Phone:</strong> {{ emp.phone }}</p>
+            <p><strong>Email:</strong> {{ emp.email }}</p>
+        </div>
+        }
+    </div>
+    }
+
+<app-pagination></app-pagination>
+</div>

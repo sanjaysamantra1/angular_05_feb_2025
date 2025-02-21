@@ -1,0 +1,139 @@
+<div class="border p-2">
+  <div>my name is : {{name}}</div>
+  <div> Name is : <span [innerHTML]="name"></span></div>
+
+  <div> Name is : <span bind-innerHTML="name"></span></div>
+
+  <hr />
+  <img src="https://documents.bcci.tv/resizedimageskirti/164_compress.png" alt="">
+  <img src="{{profile_url}}" alt="" class="mx-2">
+  <img [src]="profile_url" alt="" class="mx-2">
+  <img bind-src="profile_url" alt="" class="mx-2">
+  <hr />
+  <div>
+    Plain HTML: <input value='Virat Kohli' placeholder="Enter Your Name" />
+  </div>
+
+  <div>
+    Interpolation(1-way) : <input value='{{name}}' placeholder="Enter Your Name" />
+  </div>
+  <div>
+    Property(1-way) : <input [value]='name' placeholder="Enter Your Name" />
+  </div>
+  <div>
+    Property(1-way) : <input bind-value="name" placeholder="Enter Your Name" />
+  </div>
+
+  <div>
+    2-way : <input [(ngModel)]='name' placeholder="Enter Your Name" class="mx-2" />
+  </div>
+
+  <div>
+    2-way : <input bindon-ngModel='name' placeholder="Enter Your Name" class="mx-2" />
+  </div>
+
+  <hr />
+  <button class="btn btn-primary mx-2">Click Me</button>
+  <button class="btn btn-primary mx-2" disabled="true">Click Me</button>
+  InterPolation:
+  <button class="btn btn-primary mx-2" disabled="{{flag}}">Click Me</button>
+  <button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
+  <button class="btn btn-primary mx-2" bind-disabled="flag">Click Me</button>
+  <hr />
+  <div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+  <div>Addition of <span [innerHTML]="num1"></span> and
+    <span [innerHTML]="num2"></span> is <span [innerHTML]="num1+num2"></span>
+  </div>
+  <hr />
+  <!--  1. Have a paragraph & a toggle button, 
+  on click of the button control the visibility(Show/Hide) of the paragraph  -->
+
+  <button (click)="visibletext()">Toggle Paragraph</button>
+  <p *ngIf="showtext">
+    Hi Siva Sankar. How are you?? Are you fine...
+
+
+    <!--  2. Create a text-area with maxLength=100,
+   as the user keeps typing display updated Remaining characters.  -->
+  <div class="container">
+    <textarea [(ngModel)]="text" (input)="updatecount()" maxlength="100" rows="4" cols="50"
+      placeholder="Type here..."></textarea>
+    <p>Remaining Characters: {{ remainingtextcount }} </p>
+  </div>
+
+
+  <!--  3. Create dropdown with state names, when user changes dropdown value,
+   print the selected dropdown value in a paragraph
+  -->
+
+  <label for="states">Choose a State:</label>
+
+  <select [(ngModel)]="selectedvalue" id="states">
+    <option value="Texas">Texas</option>
+    <option value="Okalahama">Okalahama</option>
+    <option value="Chicago">Chicago</option>
+    <option value="Pensylvania">Pensylvania</option>
+    <option value="New York">New York</option>
+    <option value="Washington">Washington</option>
+  </select>
+  <p>Selected State: {{selectedvalue}}</p>
+
+  <!--
+4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations-->
+  <div class="container">
+    <p> Enter number1:
+      <input type="number" [(ngModel)]="a1" (input)="calculate()"><br>
+    </p>
+    <p> Enter number2:
+      <input type="number" [(ngModel)]="a2" (input)="calculate()"><br>
+    </p>
+    <p> Choose Operation
+      <select [(ngModel)]="symbol" (change)="calculate()">
+        <option value="+">Add</option>
+        <option value="-">Sub</option>
+        <option value="*">Mul</option>
+        <option value="/">Div</option>
+      </select>
+
+    </p>
+    <p>Output: {{val}}</p>
+  </div>
+
+  <!--
+5. create a input box, toggle the type of that input box to (text/password)-->
+
+
+
+  <input [type]=txt placeholder="enter here">
+  <input type="checkbox" [(ngModel)]="checkbox" (change)="myFunction()">Show Password
+  <!--
+6. create a counter example with 3 controls(increment,decrement,reset)-->
+
+  <div class="container">
+    <p>Counter :{{counter}}</p>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+  <!--
+7. Have a toggle button and control Dark/Light theme of a page.-->
+
+  <div [class.dark-mode]="isDarkMode" class="container1">
+    <h1>Theme Toggle Example</h1>
+    <button (click)="toggleTheme()">
+      Switch to {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+    </button>
+  </div>
+
+
+  <table>
+    @for(emp of employees; track $index){
+    <tr>
+      <td>{{emp?.eId}}</td>
+      <td>{{emp?.name}}</td>
+      <td>{{emp?.sal}}</td>
+      <td>{{emp?.gender}}</td>
+    </tr>
+    }
+  </table>
+</div>
