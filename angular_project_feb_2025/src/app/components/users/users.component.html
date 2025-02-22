@@ -41,10 +41,10 @@
         @for(user of users | paginate: { itemsPerPage: 4, currentPage: p };track $index){
         <div class="col-sm-3">
             <div class="card text-center">
-                <img class="card-img-top"
+                <img class="card-img-top" 
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjI5Cdcq6ocwEbSR5jvM_aUeckl8VBQMUnL6vWu83kmWKaodh9scTAitMD6sC7vv77n_E&usqp=CAU"
                     alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body" zoomin>
                     <h5 class="card-title">{{user.username}}</h5>
                     <p class="card-text">{{user.id}}</p>
                     <p class="card-text">{{user.name}}</p>

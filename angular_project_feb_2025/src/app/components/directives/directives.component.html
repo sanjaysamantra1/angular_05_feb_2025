@@ -1,4 +1,4 @@
-<h3 class="text-center">Let's Learn Directives</h3>
+<h3 class="text-center" highlight>Let's Learn Directives</h3>
 <div class="border p-2">
     <div>
         Before Angular-17:
@@ -98,7 +98,7 @@
     </div>
     <div>
         <div>Ng Style</div>
-        <input type="number" [(ngModel)]="num" />
+        <input type="number" [(ngModel)]="num"  />
         <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> {{num}} is {{num % 2 == 0?'Even':'Odd'}} </p>
         <p [style.fontSize.px]='num % 2 == 0 ? 48: 16'> Add style with unit </p>
         <p [style.background-color]="flag?'green':'blue' "> Add style conditionally </p>
@@ -110,5 +110,8 @@
         <input type="number" [(ngModel)]="num" />
         <div [ngClass]="['class1', 'class2', num % 2 == 0 ? 'active' : 'inactive']">
             Heloooo</div>
+    </div>
+    <div>
+        <input type="text" numberonly />
     </div>
 </div>

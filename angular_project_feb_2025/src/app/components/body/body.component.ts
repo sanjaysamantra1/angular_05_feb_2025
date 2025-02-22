@@ -12,11 +12,11 @@ import { Demo1Component } from '../demo1/demo1.component';
   imports: [
     // DatabindingComponent
     // DirectivesComponent,
-    // UsersComponent,
+    UsersComponent,
     // EmployeeListComponent,
     // MyModalComponent,
-    // ProductsComponent,
-    Demo1Component
+    ProductsComponent,
+    // Demo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

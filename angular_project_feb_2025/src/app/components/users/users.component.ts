@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ZoominDirective } from '../../directives/zoomin.directive';
 
 @Component({
   selector: 'app-users',
   imports: [
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ZoominDirective
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
