@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
+import { EmployeelistComponent } from '../employeelist/employeelist.component';
 
 @Component({
   selector: 'app-directives',
   imports: [
     CommonModule,
-    PaginationComponent
+    EmployeelistComponent
   ],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'

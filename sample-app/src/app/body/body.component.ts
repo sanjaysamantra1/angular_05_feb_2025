@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { DatabindingComponent } from '../databinding/databinding.component';
 import { DirectivesComponent } from '../directives/directives.component';
+import { EmployeelistComponent } from '../employeelist/employeelist.component';
 
 @Component({
   selector: 'app-body',
   imports: [
 
-DirectivesComponent
+EmployeelistComponent
 
   ],
   templateUrl: './body.component.html',

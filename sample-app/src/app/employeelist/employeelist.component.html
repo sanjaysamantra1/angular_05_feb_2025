@@ -1,0 +1,55 @@
+    <p>employeelist works!</p>
+    <div class="container">
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>eId</td>
+                    <td>Name</td>
+                    <td>Salary</td> 
+                    <td>Gender</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+            @for(emp of employees;track $index){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td> 
+                    <td>{{emp.gender}}</td>
+                    @if(flag){
+                    <td>
+                        <button class="btn btn-danger" (click)="delete(emp)">Delete</button>
+                        <!-- <select [(ngModel)]="emp.action" id="actions" (change)="delete(emp)">
+                            <option value="Added">Added</option>
+                            <option value="Delete">delete</option>
+                        </select> -->
+                    
+                    </td>
+                }
+                </tr>
+                
+            
+            }
+            <tr>
+               
+                <td>
+                    <input [(ngModel)]="newemployee.eId" type="number" placeholder="ID"class="form-control">
+                </td>
+                <td>
+                    <input [(ngModel)]="newemployee.name" type="text" placeholder="Name" class="form-control">
+                </td>
+                <td>
+                    <input [(ngModel)]="newemployee.sal" type="number" placeholder="Salary" class="form-control">
+                </td>
+                <td>
+                    <input [(ngModel)]="newemployee.gender" type="text" placeholder="Gender" class="form-control">
+                </td>
+                <td>
+                   <button  (click)="add()" class="btn btn-success">Add</button>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
