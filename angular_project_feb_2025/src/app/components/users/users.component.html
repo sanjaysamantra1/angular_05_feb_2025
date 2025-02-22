@@ -1,9 +1,8 @@
 <h2 class="text-center">Users</h2>
-
 <div class="container">
     <div class="row">
         @for (entry of userMap; track $index){
-            <div>{{entry[0]}} === {{entry[1]}}</div>
+        <div>{{entry[0]}} === {{entry[1]}}</div>
         }
     </div>
     <div class="row">
@@ -26,9 +25,18 @@
                 }
             </tbody>
         </table>
-        
+
     </div>
     <hr />
+    <div class="row mb-2">
+        <div class="col-sm-4 offset-4">
+            <input class="form-control" placeholder="Search..." type="search" name="" id="">
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary mx-2">Sort Asc</button>
+            <button class="btn btn-primary">Sort Desc</button>
+        </div>
+    </div>
     <div class="row">
         @for(user of users | paginate: { itemsPerPage: 4, currentPage: p };track $index){
         <div class="col-sm-3">
