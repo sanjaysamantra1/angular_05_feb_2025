@@ -1,0 +1,46 @@
+<!-- Assignment:
+-Read data from a static array and display list of products
+  https://fakestoreapi.com/products
+-implement pagination
+-implement search functionality (Search By Title)
+-implement sort functionality (Price Asc, Price desc) -->
+<h2 class="text-center">Products</h2>
+
+<div class="container">
+  <div class="row">
+    <!-- Search input -->
+    <input type="text" [(ngModel)]="searchQuery" (input)="filterProducts()" class="form-control mb-3" 
+      placeholder="Search by Title"
+    />
+
+    <!-- Sort buttons -->
+    <button (click)="sortProductsByPrice('asc')" class="btn btn-light">Sort by Price (Asc)</button>
+    <button (click)="sortProductsByPrice('desc')" class="btn btn-light">Sort by Price (Desc)</button>
+  </div>
+
+  <div class="row">
+    <!-- Loop over filtered products with pagination -->
+    <div *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 4, currentPage: p }" class="col-sm-3 d-flex">
+      <div class="card text-center h-100">
+        <div class="card-body d-flex flex-column">
+          <p><strong>Image:</strong> <img [src]="product.image" alt="{{ product.title }}" width="150px"> </p>
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p><strong>ID:</strong> {{ product.id }}</p>
+          <p><strong>Title:</strong> {{ product.title }}</p>
+          <p><strong>Price:</strong> ${{ product.price }}</p>
+          <p class="flex-grow-1" style="text-align: center; font-size: 12px;">
+            <strong>Description:</strong>  {{ product.description }}
+          </p>
+          <p><strong>Category:</strong> {{ product.category }}</p>
+          <p><strong>Rating:</strong> {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="col-sm-4 offset-4 mt-3">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

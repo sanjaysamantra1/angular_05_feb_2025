@@ -1,0 +1,93 @@
+<div>
+    States Drop down :
+    <ol>
+        @for(state of states;track $index;){
+        <li>{{state}}</li>
+        }
+    </ol>
+
+    Using select :
+    <select class="mx-2">
+        @for(state of states;track $index;){
+        <option>{{state}}</option>
+        }
+
+    </select>
+
+    <div>
+        <input list="states" id="statenames">
+        <datalist id="states">
+            @for(state of states;track $index;){
+            <option>{{state}}</option>
+            }
+        </datalist>
+    </div>
+
+    <hr />
+    <div class="toogle-container">
+        <button (click)="toogleview()">Select View</button>
+
+        @if(tooglevalue){
+
+        <div>
+            Users using table:
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>UserName</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Address Geo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(user of users;track $index){
+                    <tr>
+                        <td>ID: {{user.id}}</td>
+                        <td>Name: {{user.name}}</td>
+                        <td>username: {{user.username}}</td>
+                        <td>email: {{user.email}}</td>
+                        <!-- <td>{{user.address.street.suite.city.zipcode}}</td> -->
+                        <td>Address:
+                            {{user.address.street}},{{user.address.suite}},{{user.address.city}},{{user.address.zipcode}}
+                        </td>
+                        <td>Geo Location: {{user.address.geo.lat}},{{user.address.geo.lng}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        }
+        @if(!tooglevalue){
+        <div> Cards
+
+            <div class="d-flex flex-wrap gap-3">
+                @for(user of users;track $index){
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-2 ">
+                        <h5 class="card-title">User</h5>
+                        <p class="card-text">ID:{{user.id}}</p>
+                        <p class="card-text">Name: {{user.name}}</p>
+                        <p class="card-text">username: {{user.username}}</p>
+                        <p class="card-text">email: {{user.email}}</p>
+                        <p class="card-text">Address:
+                            {{user.address.street}},{{user.address.suite}},{{user.address.city}},{{user.address.zipcode}}
+                        </p>
+                        <p class="card-text">Geo Location: {{user.address.geo.lat}},{{user.address.geo.lng}}</p>
+
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+
+
+
+
+
+</div>

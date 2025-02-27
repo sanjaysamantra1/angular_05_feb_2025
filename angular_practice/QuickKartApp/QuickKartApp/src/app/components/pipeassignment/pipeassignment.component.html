@@ -1,0 +1,79 @@
+<p>pipeassignment works!</p>
+<div class="border">
+  <div class="border p-2 m-2">
+    <h4>Ordinal Pipe</h4>
+    <input type="number" [(ngModel)]="input" />
+    <div>Ordinal : {{ input | ordinal }}</div>
+  </div>
+
+  <!-- 3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+   input : 04-06-2020
+   output : 5 years old -->
+
+  <div class="border p-2 m-2">
+    Age
+    <input type="date" [(ngModel)]="DOB" />
+    <div>Age : {{ DOB | agein }}</div>
+  </div>
+
+  <!-- 4. declare an array of employee objects. display them in a table.
+   create a custom pipe Salutation that will add 'mr. / miss.' before the employee name. -->
+  <div class="border p-2 m-2">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>eId</th>
+          <th>name</th>
+          <th>salary</th>
+          <th>gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employee ;track $index){
+        <tr>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name | salutation : emp.gender }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. declare an array of employee objects. display them in a table. 
+   add a search-box above the table. create a custom-pipe to filter/search employees data. -->
+   <div class="border p-2 m-2">
+    <p>Search Pipe</p>
+     <input type="text" [(ngModel)]="searchText" placeholder="Search employees..." class="form-control mb-3">
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>eId</th>
+          <th>name</th>
+          <th>salary</th>
+          <th>gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employee | searchemployee : searchText ;track $index){
+        <tr>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name  }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. create a custom pipe(Roman) which takes a number as input and returns its equivalent roman value
+   input :  4    8     9   
+   output : IV  VIII   IX  -->
+    <div class="border p-2 m-2">
+    <input type="text" [(ngModel)]="num">
+    <p>Roman: {{num | romanpipe}}</p>
+   </div> 
+</div>

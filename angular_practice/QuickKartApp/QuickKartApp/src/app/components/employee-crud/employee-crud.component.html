@@ -1,0 +1,18 @@
+<div class="border p-2">
+    <div class="row">
+        <div class="text-center mb-1">
+            <div>
+                <h3>Parent values</h3>
+                @for(em of employees ;track $index){
+                    <p class="col">{{em.eId}}&nbsp;{{em.name}}&nbsp;{{em.sal}}&nbsp;{{em.gender}}</p>
+                }
+            </div>
+        </div>
+        <div class="col sm-6">
+            <app-employeetable [employee]="employees">Child1: Table</app-employeetable>
+        </div>
+        <div class="col sm-6">
+            <app-employee-add-form (addEvent)="AddNewEmployeeForm($event)">Child2: Form</app-employee-add-form>   
+        </div>
+    </div>
+</div>

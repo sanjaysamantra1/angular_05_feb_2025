@@ -1,0 +1,89 @@
+<p>pipes works!</p>
+<div class="border">
+  <div class="border p-2 m-2">
+    <h2>String Pipes</h2>
+    <div>name: {{ myname }}</div>
+    <div>name: {{ myname | uppercase }}</div>
+    <div>name: {{ myname | lowercase }}</div>
+    <div>name: {{ myname | titlecase }}</div>
+  </div>
+  <div class="border p-2 m-2">
+    <h2>currency Pipe</h2>
+    <div>currency: {{ salary }}</div>
+    <div>currency: {{ salary | currency }}</div>
+    <div>currency: {{ salary | currency : "INR" }}</div>
+    <div>currency: {{ salary | currency : "&#8361;" }}</div>
+    Korean
+  </div>
+
+  <div class="border p-2 m-2">
+    <h2>Date Pipe</h2>
+    <div>date: {{ datevalue |date }}</div>
+    <div>date: {{ datevalue | date : "fullDate" }}</div>
+    <div>date: {{ datevalue | date : "mediumDate" }}</div>
+    <div>date: {{ datevalue | date : "shortDate" }}</div>
+    <div>date: {{ datevalue | date : "fullTime" }}</div>
+    <div>date: {{ datevalue | date : "mediumTime" }}</div>
+    <div>date: {{ datevalue | date : "shortTime" }}</div>
+    <div>date: {{ datevalue | date : "dd-MMM-yyyy" }}</div>
+    <div>date: {{ datevalue | date : "dd-MMMM-yyyy" }}</div>
+    <div>date: {{ datevalue | date : "dd-MM-yyyy" }}</div>
+  </div>
+
+  <div class="border p-2 m-2">
+    <h2>Number and Percentage Pipe</h2>
+    <div>{{1234.343253453 | number :'3.2-5'}}</div>
+    <div>{{12.1 | number :'3.2-5'}}</div>
+    <div>{{0.5 | number :'3.2-5'}}</div>
+
+    <div>{{0.5 | percent}}</div>
+  </div>
+
+  <div class="border p-2 m-2">
+    <h2> Json Object</h2>
+    <div>{{user}}</div>
+    <div>{{user | json}}</div>
+  </div>
+  <div class="border p-2 m-2">
+    <h2>Key value</h2>
+    @for(entry of user | keyvalue;track $index){
+        <p>{{entry.key}}---{{entry.value}}</p>
+    }
+  </div>
+  <div class="border p-2 m-2">
+    <h2>Slice</h2>
+    <div>{{cars | slice :2:4}}</div>
+  </div>
+
+  <div class="border p-2 m-2">
+    <h2>Custom Pipe</h2>
+    <textarea [(ngModel)] ="msg" maxlength="100"></textarea>
+    <div>message: {{msg}}</div>
+    <div>Remainig : {{msg | remaining :100}}</div>
+<textarea [(ngModel)] ="msg2" maxlength="200"></textarea>
+    <div>message: {{msg2}}</div>
+    <div>Remainig : {{msg2 | remaining :200}}</div>
+
+  </div>
+
+
+  <div class="border p-2 m-2">
+    <h2> Custom Sort Pipe</h2>
+    <h3>Without sorting</h3>
+    @for(ele of myArray  ;track $index){
+        <span>{{ele}} &nbsp;</span>
+
+    }
+  </div>
+
+  <div class="border p-2 m-2">
+    <h2> Custom Sort Pipe</h2>
+    <h3>Pure pipe sorting</h3>
+    <input #num>
+    <button class="btn" (click)="myArray.push(num.value)">Add Number</button>
+    @for(ele of myArray | mysort ;track $index){
+        <span>{{ele}} &nbsp;</span>
+
+    }
+  </div>
+</div>
