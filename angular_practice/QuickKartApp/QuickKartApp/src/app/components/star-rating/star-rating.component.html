@@ -1,0 +1,10 @@
+<div class="star-rating">
+  <span
+    *ngFor="let star of starsarray; let index = index"
+    [ngClass]="{ filled: index < rate }"
+    (click)="ratingchange(index + 1)"
+  >
+    ★
+  </span>
+</div>
+<div class="star-display">Rating: {{ rate }} / 5</div>
