@@ -3,7 +3,10 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
   selector: '[zoomin]'
 })
 export class ZoominDirective {
-  constructor(private ele: ElementRef) { }
+  // Dependency Injection
+  constructor(private ele: ElementRef) {
+
+  }
   @HostListener('mouseenter') onMouseEnter() {
     this.ele.nativeElement.style.transform = 'scale(100%,120%)'
   }

@@ -1,0 +1,21 @@
+<div class="text-center">Add Employee</div>
+<div class="form border p-2">
+    <form>
+        <p>
+            <label>Eid</label> &nbsp;
+            <input type="text" [(ngModel)]="employee.eId" name="eId" placeholder="Enter Id"><br />
+        </p>
+        <p>
+            <label>Name</label>&nbsp;
+            <input type="text" [(ngModel)]="employee.name" name="name" placeholder="Enter Name"><br />
+        </p>
+        <p> <label>Salary</label>&nbsp;
+            <input type="text" [(ngModel)]="employee.sal" name="sal" placeholder="Enter Salary"><br />
+        </p>
+        <p>
+            <label>Gender</label>&nbsp;
+            <input type="text" [(ngModel)]="employee.gender" name="gender" placeholder="Enter Gender"><br />
+        </p>
+        <button (click)="addEmployee()">Add</button>
+    </form>
+</div>

@@ -8,6 +8,8 @@ import { ProductsComponent } from '../products/products.component';
 import { Demo1Component } from '../demo1/demo1.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
+import { EmployeeCrudComponent } from '../employee-crud/employee-crud.component';
+import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
 
 @Component({
   selector: 'app-body',
@@ -20,7 +22,9 @@ import { ParentComponent } from '../parent/parent.component';
     // ProductsComponent,
     // Demo1Component
     // PipesComponent
-    ParentComponent
+    ParentComponent,
+    TrafficLightComponent,
+    // EmployeeCrudComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
