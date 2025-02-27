@@ -1,0 +1,8 @@
+<div class="star-rating">
+    @for( star of stars; let i = $index; track $index) {
+        <span (click)="rate(i + 1)" class="star" [class.filled]="i < rating">
+            ★
+        </span>
+    }
+    <span class="rating-value">({{ rating.toFixed(1) }}) rating</span>
+</div>

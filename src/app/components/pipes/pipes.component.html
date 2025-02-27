@@ -1,0 +1,115 @@
+<!-- Assignment
+==========
+1. Create a custom pipe(ordinal) which takes a number as input and returns in ordinal format
+input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th
+2. create a custom pipe(Roman) which takes a number as input and returns its equivalent roman value
+input :  4    8     9
+output : IV  VIII   IX
+3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+input : 04-06-2020
+output : 5 years old
+4. declare an array of employee objects. display them in a table.
+create a custom pipe Salutation that will add 'mr. / miss.' before the employee name.
+5. declare an array of employee objects. display them in a table.
+add a search-box above the table. create a custom-pipe to filter/search employees data. -->
+
+
+<!-- 1. Create a custom pipe(ordinal) which takes a number as input and returns in ordinal format
+input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th -->
+
+<div style="font-weight: bold;">Number to Ordinal Number</div>
+<div>
+  <div>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" [(ngModel)]="userNumber" placeholder="Enter a number" />
+    <p>Result: {{ userNumber | ordinal }}</p>
+  </div>
+
+</div>
+
+<!-- 2. create a custom pipe(Roman) which takes a number as input and returns its equivalent roman value
+input :  4    8     9
+output : IV  VIII   IX  -->
+
+<div style="font-weight: bold;">Number to Roman Number</div>
+<div>
+  <div>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" [(ngModel)]="userNumber" placeholder="Enter a number" />
+    <p>Result: {{ userNumber | roman }}</p>
+  </div>
+
+</div>
+<br>
+
+<!-- 3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+input : 04-06-2020
+output : 5 years old -->
+
+<div style="font-weight: bold;">Age Calculator</div>
+<div>
+  <input type="date" [(ngModel)]="selectedDate" />
+  @if (selectedDate) {
+    <p>Age: {{ selectedDate | age }}</p>
+  }
+</div>
+<br>
+
+<!-- 
+4. declare an array of employee objects. display them in a table.
+create a custom pipe Salutation that will add 'mr. / miss.' before the employee name. -->
+
+<div style="font-weight: bold;">Salutation Pipe</div>
+
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>eId</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of arremployees  ; track emp) {
+        <tr>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name | salutation :emp.gender }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+      }
+
+    </table>
+  </div>
+
+<!-- 5. declare an array of employee objects. display them in a table.
+add a search-box above the table. create a custom-pipe to filter/search employees data -->
+<br>
+<div style="font-weight: bold;" >Custom filter </div>
+<div>
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search Employees..." />
+</div>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>eId</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees | filter: searchTerm; track employee) {
+        <tr>
+          <td>{{ employee.eId }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.sal }}</td>
+          <td>{{ employee.gender }}</td>
+        </tr>
+      }
+
+    </table>
+  </div>

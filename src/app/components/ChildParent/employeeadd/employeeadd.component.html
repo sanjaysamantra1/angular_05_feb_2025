@@ -1,0 +1,33 @@
+<h3 style="text-align: center;">Add Employee</h3>
+
+<form
+  style="width: 300px; margin: auto; padding: 15px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+
+  <div style="margin-bottom: 10px;">
+    <div>
+      <label>ID:</label><br>
+      <input type="number" [(ngModel)]="newEmployee.eId" name="eId" required style="width: 100%; padding: 5px;">
+    </div>
+    <div>
+      <label>Name:</label><br>
+      <input type="text" [(ngModel)]="newEmployee.name" name="name" required style="width: 100%; padding: 5px;">
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label>Salary:</label><br>
+      <input type="number" [(ngModel)]="newEmployee.sal" name="sal" required style="width: 100%; padding: 5px;">
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label>Gender:</label><br>
+      <select [(ngModel)]="newEmployee.gender" name="gender" required style="width: 100%; padding: 5px;">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+  </div>
+  <button type="button" (click)="addEmployee()"
+    style="width: 100%; padding: 8px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Add Employee
+  </button>
+
+</form>

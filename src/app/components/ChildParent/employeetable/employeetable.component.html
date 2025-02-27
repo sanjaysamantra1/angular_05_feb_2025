@@ -1,0 +1,25 @@
+<h3 style="text-align: center;">Employee List</h3>
+<table class="table table-bordered table-striped m-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (employee of employees; track employee; let i = $index) {
+      <tr>
+        <td>{{ employee.eId }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.sal }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>
+          <button (click)="deleteEmployee(i)">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

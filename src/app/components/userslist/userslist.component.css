@@ -1,0 +1,28 @@
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+
+.toggle-container button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.toggle-container button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: scale(1.05);
+}
+
+.toggle-container button:focus {
+    outline: none;
+}

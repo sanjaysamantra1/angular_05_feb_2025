@@ -1,4 +1,4 @@
-.card {
+/* .card {
     border-radius: 10px;
     transition: 0.3s;
   }
@@ -6,4 +6,8 @@
   .card:hover {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   }
-  
+   */
+
+   .main-body{
+    min-height: 750px;
+   }

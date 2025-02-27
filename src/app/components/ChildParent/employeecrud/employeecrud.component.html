@@ -1,0 +1,13 @@
+<div>
+  <h3 style="text-align: center;">Parent Employee Storage</h3>
+  <!-- <pre>{{ getEmployeeJson() }}</pre>   -->
+  <div>
+    <pre>{{ employees | json }}</pre>
+  </div>
+  <div>
+    <app-employeetable [employees]="employees"></app-employeetable>
+  </div>
+  <div>
+    <app-employeeadd (addEvent)="addEmployee($event)"></app-employeeadd>
+  </div>
+</div>

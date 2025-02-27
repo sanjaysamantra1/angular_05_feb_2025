@@ -1,0 +1,120 @@
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees;track $index){
+            <tr>
+                <td>{{emp.eId}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.sal}}</td>
+                <td>{{emp.gender}}</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+<hr />
+
+
+<div class="toggle-container">
+    <button (click)="toggleView()">Switch to {{ isTableView ? 'Card' : 'Table' }} View</button>
+</div>
+
+@if (isTableView) {
+<div class="table-view">
+    <table class="table table-bordered table-striped">
+        <thead style="text-align: center;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th colspan="4">Address</th>
+                <th colspan="2">Geo</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company Name</th>
+                <th>Company Catch Phrase</th>
+                <th>Company Business</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Street</th>
+                <th>Suite</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(user of userslist;track $index){
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address.street}}</td>
+                <td>{{user.address.suite}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.zipcode}}</td>
+                <td>{{user.address.geo.lat}}</td>
+                <td>{{user.address.geo.lng}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.website}}</td>
+                <td>{{user.company.name}}</td>
+                <td>{{user.company.catchPhrase}}</td>
+                <td>{{user.company.bs}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+}
+
+@if (!isTableView) {
+<div class="card-view" style="display: flex;flex-wrap: wrap;">
+    @for(user of userslist;track $index){
+    <div class="card" style="width: 18rem;">
+        <img src="images\AK.jpg" class="card-img-top" Zoomin>
+        <div class="card-body">
+            <a href="#" class="btn btn-success" style="font-weight: bold;">{{ user.name }}</a>
+            <p><strong>ID:</strong> {{ user.id }}</p>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Phone:</strong> {{ user.phone }}</p>
+            <p><strong>Website:</strong> {{ user.website }}</p>
+            <h6 class="mt-3"><strong>Address:</strong></h6>
+            <p><strong>Street:</strong> {{ user.address.street }}</p>
+            <p><strong>Suite:</strong> {{ user.address.suite }}</p>
+            <p><strong>City:</strong> {{ user.address.city }}</p>
+            <p><strong>Zipcode:</strong> {{ user.address.zipcode }}</p>
+            <h6 class="mt-3"><strong>Geo Location:</strong></h6>
+            <p><strong>Latitude:</strong> {{ user.address.geo.lat }}</p>
+            <p><strong>Longitude:</strong> {{ user.address.geo.lng }}</p>
+            <h6 class="mt-3"><strong>Company:</strong></h6>
+            <p><strong>Name:</strong> {{ user.company.name }}</p>
+            <p><strong>Catchphrase:</strong> {{ user.company.catchPhrase }}</p>
+            <p><strong>Business:</strong> {{ user.company.bs }}</p>
+        </div>
+    </div>
+
+    }
+</div>
+}

@@ -1,0 +1,83 @@
+<!-- Assignment:
+-Read data from a static array and display list of productss
+  https://fakestoreapi.com/productss
+-implement pagination
+-implement search functionality (Search By Title)
+-implement sort functionality (Price Asc, Price desc) -->
+
+
+<!-- <h2 class="text-center">Products</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+            <input type="search" name="" id=""></div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary mx-2">Sort Asc</button>
+            <button class="btn btn-primary">Sort Desc</button>
+
+        </div>
+        @for(products of productslist | paginate: { itemsPerPage: 4, currentPage: p};track $index){
+        <div class="col-sm-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">{{products.title}}</h5>
+                    <p><strong>ID:</strong> {{ products.id }}</p>
+                    <p><strong>Title:</strong> {{ products.title }}</p>
+                    <p><strong>Price:</strong> ${{ products.price }}</p>
+                    <p><strong>Description:</strong> {{ products.description }}</p>
+                    <p><strong>Category:</strong> {{ products.category }}</p>
+                    <p><strong>Image:</strong> <img src="{{ products.image }}" alt="{{ products.title }}" width="100">
+                    </p>
+                    <p><strong>Rating:</strong> {{ products.rating.rate }} ({{ products.rating.count }} reviews)</p>
+
+                    <a href="#" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+        }
+        <div class="col-sm-4 offset-4 mt-3">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div> -->
+<hr/>
+<h2 class="text-center">List Of Products</h2>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <input type="search" class="form-control" placeholder="Search by Title" [(ngModel)]="searchProducts" (input)="filterProducts()">
+        </div>
+        <div class="col-md-4 text-center">
+            <select [(ngModel)]="sortOrder" (change)="sortProducts()" class="sort-dropdown">
+                <option value="">Sort by Price</option>
+                <option value="asc">Price: Low to High</option>
+                <option value="desc">Price: High to Low</option>
+            </select>
+        </div>
+    </div>
+    <!-- Product Grid -->
+    <div class="row d-flex flex-wrap justify-content-start">
+        @for ( products of filterProducts() | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{{ products.image }}" class="card-img-top" alt="{{ products.title }}"
+                    style="height: 150px; object-fit: contain;">
+                <div class="card-body text-center" Zoomin>
+                    <h5 class="card-title">{{ products.title }}</h5>
+                    <p><strong>Price:</strong> ${{ products.price }}</p>
+                    <p><strong>Category:</strong> {{ products.category }}</p>
+                    <p><strong>Rating:</strong> {{ products.rating.rate }} ({{ products.rating.count }} reviews)</p>
+                    <a href="#" class="btn btn-primary btn-sm">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Pagination -->
+    <div class="row">
+        <div class="col-md-12 text-center mt-3">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
