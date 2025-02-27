@@ -1,0 +1,19 @@
+<div>
+    <h2>Parent Employee Storage</h2>
+    <div>
+      @for (emp of employees; track emp) {
+      <p style="margin: 50px;">
+        <strong>ID:</strong> {{ emp.eId }} |
+        <strong>Name:</strong> {{ emp.name }} |
+        <strong>Salary:</strong> {{ emp.sal }} |
+        <strong>Gender:</strong> {{ emp.gender }}
+      </p>
+      }
+    </div>
+    <div>
+      <app-employee-table [employees]="employees"></app-employee-table>
+    </div>
+    <div>
+      <app-employee-add (addEvent)="addEmployee($event)"></app-employee-add>
+    </div>
+  </div>

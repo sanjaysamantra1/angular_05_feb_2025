@@ -1,0 +1,102 @@
+<!-- 1. Create a custom pipe(ordinal) which takes a number as input and returns in ordinal format
+   input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th -->
+
+<div class="ordinal converter">
+    <h2>Ordinal Number Converter</h2>
+
+    <input type="number" [(ngModel)]="userInput" placeholder="Enter a number" />
+
+    @if (userInput !== null) {
+    <p>Ordinal: {{ userInput | ordinal }}</p>
+    }
+</div>
+
+
+<!-- 2. create a custom pipe(Roman) which takes a number as input and returns its equivalent roman value
+   input :  4    8     9   
+   output : IV  VIII   IX  -->
+
+<div class="roman-converter">
+    <h2>Roman Number Converter</h2>
+
+    <input type="number" [(ngModel)]="numberValue" placeholder="Enter a number" />
+
+    @if (numberValue) {
+    <p>Roman Numeral: {{ numberValue | romanpipe }}</p>
+    } @else {
+    <p>Please enter a number to convert.</p>
+    }
+</div>
+
+
+<!-- 3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+   input : 04-06-2020
+   output : 5 years old -->
+
+<div class="Age">
+    <h2>Age</h2>
+    <input type="date" [(ngModel)]="birthDate" placeholder="Enter birth date" />
+
+    @if (birthDate) {
+    <p>Age: {{ birthDate | age }}</p>
+    } @else {
+    <p>Please enter a birth date.</p>
+    }
+</div>
+
+
+<!-- 5. declare an array of employee objects. display them in a table. 
+add a search-box above the table. create a custom-pipe to filter/search employees data. -->
+
+<div>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search Employees..." />
+</div>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>eId</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (employee of employees2 | filter: searchTerm; track employee) {
+            <tr>
+                <td>{{ employee.eId }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.sal }}</td>
+                <td>{{ employee.gender }}</td>
+            </tr>
+            }
+
+    </table>
+</div>
+
+<!-- 4. declare an array of employee objects. display them in a table.
+create a custom pipe Salutation that will add 'mr. / miss.' before the employee name.  -->
+
+<div>
+    <h2>Employee List</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+
+        @for (emp of arremployees; track emp) {
+        <tr>
+            <td>{{ emp.name | salutation: emp.gender }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.eId }}</td>
+            <td>{{ emp.sal }}</td>
+        </tr>
+        }
+    </table>
+</div>
+
+

@@ -1,0 +1,89 @@
+<div class="toggle-container">
+    <button (click)="toggleView()">Switch to {{ isTableView ? 'Card' : 'Table' }} View</button>
+</div>
+
+<!-- Table View -->
+@if(isTableView){
+<div>
+    <table class="table table-bordered table-striped">
+        <thead style="text-align: center;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th colspan="4">Address</th>
+                <th colspan="2">Geo</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company Name</th>
+                <th>Company Catch Phrase</th>
+                <th>Company Business</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Street</th>
+                <th>Suite</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(user of UserList;track $index){
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address.street}}</td>
+                <td>{{user.address.suite}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.zipcode}}</td>
+                <td>{{user.address.geo.lat}}</td>
+                <td>{{user.address.geo.lng}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.website}}</td>
+                <td>{{user.company.name}}</td>
+                <td>{{user.company.catchPhrase}}</td>
+                <td>{{user.company.bs}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}
+
+@if(!isTableView){
+    <div class="card-view" style="display: flex; flex-wrap: wrap; gap: 16px;" appHost>
+    @for(user of UserList;track $index){
+        <div class="card" style="width: 18rem; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div class="card-body">
+            <a href="#" class="btn btn-success">{{ user.name}}</a>
+            <p class="card-text"><strong>ID:</strong> {{user.id}}</p>
+            <p class="card-text"><strong>User Name:</strong> {{user.username}}</p>
+            <p class="card-text"><strong>Email:</strong> {{user.email}}</p>
+            <p class="card-text"><strong>Address - Street:</strong> {{user.address.street}}</p>
+            <p class="card-text"><strong>Address - Suite:</strong> {{user.address.suite}}</p>
+            <p class="card-text"><strong>Address - City:</strong> {{user.address.city}}</p>
+            <p class="card-text"><strong>Address - ZipCode:</strong> {{user.address.zipcode}}</p>
+            <p class="card-text"><strong>Address - Geo Latitude:</strong> {{user.address.geo.lat}}</p>
+            <p class="card-text"><strong>Address - Geo Longitude:</strong> {{user.address.geo.lng}}</p>
+            <p class="card-text"><strong>Phone:</strong> {{user.phone}}</p>
+            <p class="card-text"><strong>Website:</strong> {{user.website}}</p>
+            <p class="card-text"><strong>Company Name:</strong> {{user.company.name}}</p>
+            <p class="card-text"><strong>Company CatchPhrase:</strong> {{user.company.catchPhrase}}</p>
+            <p class="card-text"><strong>Company BS:</strong> {{user.company.bs}}</p>
+        </div>
+    </div>
+    }
+</div>
+}

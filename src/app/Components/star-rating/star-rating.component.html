@@ -1,0 +1,7 @@
+<div class="star-rating">
+    @for( star of stars; let i = $index;track $index){
+        <span (click)="rate(i + 1)" class="star" [class.filled]="i < rating">
+            ★
+        </span>
+    }
+</div>
