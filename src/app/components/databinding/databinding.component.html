@@ -1,0 +1,32 @@
+<!-- <h2 class="text-denter">Databinding Component</h2>
+
+<div>myname is ::{{myname}}</div><!-- interpolation-->
+<!-- <div>myname is :: <span [innerHTML]=" myname"></span></div> -->
+<!-- or--><!--both are  property binding-->
+ <!-- <div>myname is :: <span bind-innerHTML = "myname"></span></div> -->
+ <!-- <div>1 way Binding:: <input [value] ="myname"></div> -->
+ <!-- <div>2 way Binding:: <input [(ngModel)] = "myname"></div> -->
+
+ <!-- <div>search box:: <input type = "search" placeholder="search..." [(ngModel)] = "searchtext" on-keyup="searchTextchange"></div> -->
+
+ <!-- interpolation: Used when you only need to display data dynamically. it is only used for concatenating strings 
+and  it doesn't work with boolean values.No need to update anything; just show values from the component in the UI-->
+<!-- Property Binding: Used when you need to dynamically set an HTML property (e.g., src, disabled, hidden). even if we have non-string datavalue  like boolean and all 
+Interpolation doesn’t work for setting attributes like src, disabled, class, etc-->
+<!-- Event binding:  when the user interacts with UI(clicking button,entering text) -->
+
+ <!-- <img src = "{{img_url}}"/>
+ <img [src] = "img_url" class="mx-2"/>
+ <img bind-src = "img_url" class="mx-2"/> -->
+
+
+ <!-- <button class="btn btn-primary mx-2" disabled="{{flag}}">Click me</button>
+ <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
+ <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button> -->
+
+ <!-- <div>Event Binding</div>
+ <button class=" btn btn-primary mx-2" (click)="f1()">btn-1</button>
+ <button class=" btn btn-primary mx-2" on-click="f1()">btn-1</button> -->
+  
+
+

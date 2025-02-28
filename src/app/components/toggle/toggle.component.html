@@ -1,0 +1,66 @@
+
+<div style="margin-top: 20px;">
+    <button (click)="toggleVisibility()">
+      {{ isVisible ? 'Hide' : 'Show' }} paragraph
+    </button>
+    @if (isVisible) {
+      <p>
+        Hey hai,This is toggle !!!
+      </p>
+    }
+  </div>
+  <hr>
+
+  <textarea [(ngModel)]="textInput" [attr.maxLength]="maxLength"></textarea>
+  <p>Remaining characters: {{ maxLength - textInput.length }}</p>
+  <hr>
+
+  <!-- 3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+  <select [(ngModel)]="selectedState">
+    @for (state of states; track state) {
+      <option [value]="state">{{ state }}</option>
+    }
+  </select>
+  <p>Selected State: {{ selectedState }}</p>
+  <hr />
+
+
+  <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+  <input type="number" [(ngModel)]="num1" />
+  <select [(ngModel)]="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" [(ngModel)]="num2" />
+  <p>Result: {{ result }}</p>
+  <hr>
+
+
+
+    <!-- 5. create a input box, toggle the type of that input box to (text/password) -->
+    <input [type]="inputType" />
+    <button (click)="inputType = inputType === 'password' ? 'text' : 'password'">
+      Toggle Type
+    </button>
+    <hr>
+
+
+      <!-- 6. create a counter example with 3 controls(increment,decrement,reset) -->
+      <button (click)="decrement()">Decrement</button>
+      <span style="margin: 10px;">{{ counter }}</span>
+      <button (click)="increment()" style="margin: 10px;">Increment</button>
+      <button (click)="reset()">Reset</button>
+      <hr>
+
+
+        <!-- 7. Have a toggle button and control Dark/Light theme of a page. -->
+        <div [class.dark-mode]="isDarkMode"><button (click)="isDarkMode =!isDarkMode" style="margin-top: 10px;">
+        Toggle {{ isDarkMode ? 'Light':'Dark'}} Mode </button>
+
+      </div>
+  
+
+
+  

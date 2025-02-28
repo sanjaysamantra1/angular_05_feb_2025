@@ -1,0 +1,45 @@
+<h2 class="text-center">users</h2>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+
+                </tr>
+            </thead>
+            <body>
+                @for(user of users;track  $index){
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.username}}</td>
+                    </tr>
+                }
+            </body>
+        </table>
+    </div>
+    <hr/>
+    <div class="row">
+        @for(user of users;track $index){
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBOkWiGXMHWmfWVJ32wGigIA_Z1T5NjKr1KQ&s">
+                    <div class="card-body">
+                      <h5 class="card-title">{{user.username}}</h5>
+                      <p class="card-text">{{user.id}}</p>
+                      <p class="card-text">{{user.name}}</p>
+                      <p class="card-text">{{user.email}}</p>
+                      <p class="card-text">{{user.phone}}</p>
+                      <p class="card-text">{{user.address.city}}</p>
+                      <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                  </div>
+            </div>
+        }
+    </div>
+
+</div>

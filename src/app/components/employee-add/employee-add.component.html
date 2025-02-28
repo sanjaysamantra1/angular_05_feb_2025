@@ -1,0 +1,34 @@
+<h3>Employee Form</h3>
+<form>
+<div>
+    <label for="eId">eId</label>
+    <input type="number" id="eid" [(ngModel)]="newemployee.eId" name="eid"/>
+    </div>
+<div >
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="newemployee.name" name="name"/>
+  </div>
+
+  <div>
+    <label for="salary">Salary</label>
+    <input type="number" id="salary" [(ngModel)]="newemployee.salary" name="salary" />
+  </div>
+
+  <div>
+    <label for="department">Department</label>
+    <input type="text" id="department" [(ngModel)]="newemployee.department" name="department"/>
+  </div>
+
+  <div>
+    <label for="position">Position</label>
+    <input type="text" id="position" [(ngModel)]="newemployee.position" name="position"  />
+  </div>
+
+  <div>
+    <label for="experience">Experience</label>
+    <input type="number" id="experience" [(ngModel)]="newemployee.experience" name="experience" />
+  </div>
+
+  <button type="button" (click)="addEmployee()">Add Employee</button>
+
+</form>

@@ -1,0 +1,23 @@
+    <pre>{{getEmployeejson()}}</pre>
+
+
+
+<!-- 
+    <div>
+        @for (emp of employees; track emp) {
+        <p>Id: {{ emp.eId }}</p>  
+        <p>Name: {{ emp.name }}</p>
+        <p>Salary: {{ emp.salary }}</p>
+        <p>Department: {{ emp.department }}</p>
+        <p>Position: {{ emp.position }}</p>
+        <p>Experience: {{ emp.experience }} years</p>
+        <hr>
+        }
+    </div>  -->
+
+    <div>
+        <app-employeetable [employees] ="employees"></app-employeetable>
+    </div>
+    <div>
+        <app-employee-add (addEvent) = "addEmployee($event)"></app-employee-add>
+    </div>
