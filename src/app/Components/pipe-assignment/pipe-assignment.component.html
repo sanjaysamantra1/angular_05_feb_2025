@@ -1,0 +1,37 @@
+<h2>Ordinal Pipe</h2>
+<input type="number" [(ngModel)]="ordinalInput" placeholder="Enter a number" />
+<p>Result: {{ ordinalInput | ordinal }}</p>
+
+<h2>Roman Pipe</h2>
+<input type="number" [(ngModel)]="romanInput" placeholder="Enter a number" />
+<p>Result: {{ romanInput | roman }}</p>
+
+<h2>Age Pipe</h2>
+<input type="date" [(ngModel)]="birthDateInput" />
+<p>Calculated Age: {{ birthDateInput | age }}</p>
+
+<h2>Employee List with Salutation Pipe</h2>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Department</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.name | salutation : emp.gender }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.department }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Search Employee</h2>
+<input type="text" [(ngModel)]="searchText" placeholder="Enter Employee Name" />
+<p>
+  Result:
+  {{
+    employees
+      | employeeFilter : (searchText ? "Employee Found" : "Employee Not Found")
+  }}
+</p>

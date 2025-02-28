@@ -1,0 +1,108 @@
+<div class="container">
+  <h2 class="mt-3">Employee Management</h2>
+
+  <!-- Employee List Table -->
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+        <td>
+          <button
+            class="btn btn-info btn-sm"
+            (click)="viewEmployee(emp)"
+            data-bs-toggle="modal"
+            data-bs-target="#viewEmployeeModal"
+          >
+            View Details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Employee Details Modal -->
+  <div
+    class="modal fade"
+    id="viewEmployeeModal"
+    tabindex="-1"
+    aria-labelledby="modalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Employee Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>ID</th>
+                <td>{{ selectedEmployee?.id }}</td>
+              </tr>
+              <tr>
+                <th>Name</th>
+                <td>{{ selectedEmployee?.name }}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td>{{ selectedEmployee?.email }}</td>
+              </tr>
+              <tr>
+                <th>Department</th>
+                <td>{{ selectedEmployee?.department }}</td>
+              </tr>
+              <tr>
+                <th>Salary</th>
+                <td>${{ selectedEmployee?.salary }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 class="mt-3">Projects</h5>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let project of selectedEmployee?.projects">
+                <td>{{ project.name }}</td>
+                <td>{{ project.duration }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
