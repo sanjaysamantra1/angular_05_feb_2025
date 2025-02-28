@@ -1,0 +1,43 @@
+<p>{{ 'Hello World' | uppercase }}</p>  <!-- Output: HELLO WORLD -->
+<p>{{ 'Hello World' | lowercase }}</p>
+
+<p>{{ 100 | currency }}</p>            <!-- Output: $100.00 -->
+<p>{{ 100 | currency:'EUR':'code' }}</p>  <!-- Output: EUR100.00 -->
+
+<p>{{ 3.14159 | number:'1.2-3' }}</p>  <!-- Output: 3.14 (min 2, max 3 decimal places) -->
+
+<p>{{ 1 | ordinal }}</p>    <!-- Output: 1st -->
+<p>{{ 2 | ordinal }}</p>    <!-- Output: 2nd -->
+<p>{{ 3 | ordinal }}</p>    <!-- Output: 3rd -->
+<p>{{ 11 | ordinal }}</p>   <!-- Output: 21st -->
+<p>{{ 12 | ordinal }}</p>   <!-- Output: 21st -->
+<p>{{ 13 | ordinal }}</p>   <!-- Output: 21st -->
+<p>{{ 21 | ordinal }}</p>   <!-- Output: 21st -->
+<p>{{ 22 | ordinal }}</p>   <!-- Output: 22nd -->
+<p>{{ 23 | ordinal }}</p>   <!-- Output: 23rd -->
+<p>{{ 24 | ordinal }}</p>
+
+<p>{{ 4 | roman }}</p>   <!-- Output: IV -->
+<p>{{ 8 | roman }}</p>   <!-- Output: VIII -->
+<p>{{ 9 | roman }}</p>   <!-- Output: IX -->
+<p>{{ 44 | roman }}</p>  <!-- Output: XLIV -->
+<p>{{ 3999 | roman }}</p>  <!-- Output: MMMCMXCIX -->
+
+
+<p>{{ '04-06-2020' | age }}</p>  <!-- Output: 5 years old -->
+<p>{{ '1990-02-15' | age }}</p>  <!-- Example: 34 years old -->
+
+<table >
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Position</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.name | salutation: emp.gender }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.position }}</td>
+    </tr>
+  </table>
+
+  

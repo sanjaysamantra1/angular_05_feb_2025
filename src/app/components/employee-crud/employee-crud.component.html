@@ -1,0 +1,85 @@
+<!-- <h2>Employee List</h2>
+
+<div class="mb-3">
+  <button class="btn btn-success" (click)="toggleAddEmployeeForm()">
+    {{ showAddEmployeeForm ? 'Cancel' : 'Add Employee' }}
+  </button>
+</div>
+
+<div *ngIf="showAddEmployeeForm" class="mb-3">
+  <h3>Add New Employee</h3>
+  <form (ngSubmit)="addEmployee()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" [(ngModel)]="newEmployee.name" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="department" class="form-label">Department:</label>
+      <input type="text" id="department" [(ngModel)]="newEmployee.department" name="department" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="salary" class="form-label">Salary:</label>
+      <input type="number" id="salary" [(ngModel)]="newEmployee.salary" name="salary" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" [(ngModel)]="newEmployee.email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="joiningDate" class="form-label">Joining Date:</label>
+      <input type="date" id="joiningDate" [(ngModel)]="newEmployee.joiningDate" name="joiningDate" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Employee</button>
+  </form>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Salary</th>
+      <th>Email</th>
+      <th>Joining Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; trackBy: trackById">
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.department }}</td>
+      <td>{{ emp.salary | currency:'USD' }}</td>
+      <td>{{ emp.email }}</td>
+      <td>{{ emp.joiningDate }}</td>
+      <td>
+        <button class="btn btn-primary me-2" (click)="openModal(emp)">View Details</button>
+        <button class="btn btn-danger" (click)="deleteEmployee(emp)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" #employeeModal id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="selectedEmployee">
+        <p><strong>ID:</strong> {{ selectedEmployee.id }}</p>
+        <p><strong>Name:</strong> {{ selectedEmployee.name }}</p>
+        <p><strong>Department:</strong> {{ selectedEmployee.department }}</p>
+        <p><strong>Salary:</strong> {{ selectedEmployee.salary | currency:'USD' }}</p>
+        <p><strong>Email:</strong> {{ selectedEmployee.email }}</p>
+        <p><strong>Joining Date:</strong> {{ selectedEmployee.joiningDate }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+

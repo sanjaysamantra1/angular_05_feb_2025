@@ -1,0 +1,159 @@
+<!-- <p>databinding works!</p>
+<div class="text-center">
+    Let's Learn Data Binding
+</div>
+<div class="border p2">
+    <div>Name is : {{myName}}</div>
+    <div>Name is : <span [innerHTML]="myName"></span></div> 
+    <div>Name is : <span bind-innerHTML="myName"></span></div>
+<hr/>
+<img src="assets/images/Nishith.jpeg" alt=""> 
+<img src={{profile_url}} alt="">
+<img [src]="profile_url" alt="" class="mx-2">
+<img bind-src="profile_url" alt="" class="mx-2">
+
+<div>
+    Plain HTML: <input value='Nishith naidu' placeholder="Enter Your Name" />
+</div>
+<div>
+    Interpolation(1-way) : <input value='{{myName}}' placeholder="Enter Your Name" class="mx-2" />
+</div>
+<div>
+    Property(1-way) : <input [value]='myName' placeholder="Enter Your Name" class="mx-2" />
+</div>
+<div>
+    Property(1-way) : <input bind-value='myName' placeholder="Enter Your Name" class="mx-2" /></div>
+</div>
+<div>
+    2-way : <input [(ngModel)]='myName' placeholder="Enter Your Name" class="mx-2" />
+</div>
+<div>
+    2-way : <input bindon-ngModel='myName' placeholder="Enter Your Name" class="mx-2" />
+</div>
+<hr />
+<button class="btn btn-primary mx-2">Click Me</button>
+<button class="btn btn-primary mx-2" disabled="true">Click Me</button>
+InterPolation:
+<button class="btn btn-primary mx-2" disabled="{{flag}}">Click Me</button>
+<button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
+<button class="btn btn-primary mx-2" bind-disabled="flag">Click Me</button>
+<hr />
+<div>Addition of {{num1}} and {{num2}} is {{num1+num2}}</div>
+<div>Addition of <span [innerHTML]="num1"></span> and
+    <span [innerHTML]="num2"></span> is <span [innerHTML]="num1+num2"></span>
+</div>
+<hr />
+<div>
+    Event Binding:
+    <button class="btn btn-success mx-2" (click)="sayHello()">Say Hello</button>
+    <button class="btn btn-success mx-2" on-click="sayHello()">Say Hello</button>
+</div> -->
+
+<!-- 1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.
+3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph
+4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations
+5. create a input box, toggle the type of that input box to (text/password)
+6. create a counter example with 3 controls(increment,decrement,reset)
+7. Have a toggle button and control Dark/Light theme of a page. -->
+
+<button class="btn btn-primary" (click)="toggleVisibility()" >{{isVisible? 'Hide': 'Show'}} Paragraph</button>
+
+<p *ngIf="isVisible" style="color: blue;">This is the paragraph content that should be visible on toggle</p>
+
+
+
+
+<div style="text-align: center; margin-top: 20px;">
+
+   <textarea [(ngModel)]="userInput" (input)="remainingChars"  [maxlength]="maxLength" placeholder="Type Something to enter" rows="5" cols="50"></textarea>
+   <p>Remaining characters: {{ this.maxLength-this.userInput.length }}</p>
+</div>
+
+
+
+
+<div style="text-align: center; margin-top: 20px;">
+    <select [(ngModel)]="selectedState" (change)="onSelectedState()">
+    <option value="" selected>Select a state</option>
+    <option value="Texas">Texas </option>
+    <option value="Chicago">Chicago</option>
+    <option value="California">California</option>
+    <option value="New York">New York</option>
+    </select>
+    <p>Selected State: {{ selectedState }}</p>
+</div>
+
+
+<!-- have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+<div style="text-align: center;">
+    <h2>Perform Arithmetic Operations</h2>
+    
+    <label for="number1">First number:</label>
+    <input type="number" id="number1" name="number1" [(ngModel)]="number1"><br><br>
+    
+    <label for="number2">Second number:</label>
+    <input type="number" id="number2" name="number2" [(ngModel)]="number2"><br><br>
+
+ <label for="operation">Operation</label>
+ <select id="operation" name="operation" [(ngModel)]="operation">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    </select><br><br>
+
+    <button (click)="performOperation()">Calculate the operation</button>
+
+    <p>result is :{{result}}</p>
+  </div>
+
+
+
+
+<!-- create a input box, toggle the type of that input box to (text/password) -->
+<div style="text-align: center;">
+    <h2>Toggle Input Type</h2>
+  
+    
+    <label for="inputField">Enter your information:</label>
+    <input [type]="inputType" [(ngModel)]="inputValue" name="inputField" id="inputField" /><br><br>
+   
+
+    <button (click)="toggleInputType()">
+      Toggle to {{ inputType === 'password' ? 'Text' : 'Password' }}
+    </button><br><br>
+ 
+    <p>Your Input: {{ inputValue }}</p>
+  </div>
+
+
+  <!-- create a counter example with 3 controls(increment,decrement,reset)
+7. Have a toggle button and control Dark/Light theme of a page. -->
+
+
+<div class="counter" style="text-align: center;">
+    <h1>Counter: {{counter}}</h1>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+    <button (click)="reset()">Reset</button>
+</div>
+
+
+
+
+    <!-- app.component.html -->
+    <label class="switch" style="text-align: center;">
+<div [ngClass]="isDarkTheme ? 'dark-theme' : 'light-theme'">
+    <input type="checkbox" checked>
+    <span class="slider round" (click)="toggleTheme()">
+      {{ isDarkTheme ? 'Light' : 'Dark' }}
+    </span>
+</div>
+
+</label>
+  
+    <p>This is some sample content on the page.</p>
+   
+
+

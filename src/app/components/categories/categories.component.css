@@ -1,0 +1,29 @@
+.category-card {
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-img-top {
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff4757;
+    border-color: #ff4757;
+  }

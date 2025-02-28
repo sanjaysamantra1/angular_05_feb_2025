@@ -1,0 +1,26 @@
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand img {
+    height: auto;
+    width: 100px;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    color: #000 !important;
+  }
+  
+  .nav-link:hover {
+    color: #ff6b6b !important;
+  }
+  
+  .fa-shopping-cart, .fa-user {
+    font-size: 1.2rem;
+    color: #000;
+  }
+  
+  .fa-shopping-cart:hover, .fa-user:hover {
+    color: #ff6b6b;
+  }

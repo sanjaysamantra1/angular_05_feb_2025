@@ -1,0 +1,28 @@
+<h2>this is employee table child component</h2>
+    <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Email</th>
+        <th>Joining Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.salary | currency:'USD' }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.joiningDate }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteEmployee(emp)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

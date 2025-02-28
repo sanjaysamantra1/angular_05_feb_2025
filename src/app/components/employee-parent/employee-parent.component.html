@@ -1,0 +1,28 @@
+<h1>this is parent component</h1>
+<!-- <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Email</th>
+        <th>Joining Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees;">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.salary | currency:'USD' }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.joiningDate }}</td>
+        <td>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+<app-employee-table [employees]="employees" ></app-employee-table>
+<app-employee-form (employeeAdded)="addEmployee($event)"></app-employee-form>
