@@ -8,11 +8,12 @@ import { FormsModule } from '@angular/forms';
 
 
 import { PipeAssignmentComponent } from './Components/pipe-assignment/pipe-assignment.component';
+import { StarRatingComponent } from './Components/star-rating/star-rating.component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, EmployeeCRUDComponent,
-    FormsModule, PipeAssignmentComponent, 
+    FormsModule, PipeAssignmentComponent, StarRatingComponent
      
     ],
   templateUrl: './app.component.html',
