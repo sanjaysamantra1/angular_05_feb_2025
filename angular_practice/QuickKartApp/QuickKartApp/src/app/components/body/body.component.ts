@@ -7,6 +7,7 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { PipeassignmentComponent } from '../pipeassignment/pipeassignment.component';
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
+import { EmployeeSComponent } from '../employee-s/employee-s.component';
 
 @Component({
   selector: 'app-body',
@@ -17,7 +18,8 @@ import { StarRatingComponent } from '../star-rating/star-rating.component';
     //PipesComponent
     //PipeassignmentComponent
    // EmployeeCRUDComponent,
-    StarRatingComponent
+   // StarRatingComponent
+    EmployeeSComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

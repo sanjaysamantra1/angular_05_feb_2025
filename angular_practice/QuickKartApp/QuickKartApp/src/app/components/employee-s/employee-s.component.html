@@ -1,0 +1,33 @@
+<div>
+  <div>
+    <label for="select">Select Employees</label>
+    <select id = "select" [(ngModel)]="selectCriiteria" (change)="onDropdownSelect(selectCriiteria)">
+      <option value="All">All Employees</option>
+      <option value="male">Male Employees</option>
+      <option value="female">Female Employees</option>
+
+    </select>
+  </div>
+  <br>
+  <table class="table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>EID</th>
+        <th>NAME</th>
+        <th>SALARY</th>
+        <th>GENDER</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(emp of employees;track $index){
+      <tr style="text-align: center">
+        <td>{{ emp.eId }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>{{ emp.gender }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  
+</div>
