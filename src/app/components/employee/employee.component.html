@@ -1,0 +1,26 @@
+<h3 style="text-align: center;">Employee List with Service Task</h3>
+<select [(ngModel)]="selectedFilter"(click)="getFilteredEmployees()">
+    <option value="allemployees">All Employees</option>
+    <option value="maleEmployees">Male Employees</option>
+    <option value="femaleEmployees">Female Employees</option>
+  </select>
+<table class="table table-bordered table-striped m-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (employee of employees; track employee; let i = $index) {
+      <tr>
+        <td>{{ employee.eId }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.sal }}</td>
+        <td>{{ employee.gender }}</td>
+      </tr>     
+    }
+  </tbody>
+</table>
