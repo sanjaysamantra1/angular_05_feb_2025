@@ -1,0 +1,163 @@
+<!-- Employee Table -->
+<div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Table of Employees</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Email</th>
+            <th>Joining Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of allEmployees">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.joiningDate }}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card shadow-lg mt-4">
+  <div class="card-header bg-primary text-white">
+    <h3 class="mb-0">Table of Male employees</h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Department</th>
+          <th>Salary</th>
+          <th>Email</th>
+          <th>Joining Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of maleEmployees">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.salary }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.joiningDate }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+           
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">Table of Female employees</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Email</th>
+            <th>Joining Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of femaleEmployees">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.joiningDate }}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+             
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <h2> dropdown for applying the filter for employees</h2>
+  <!-- Dropdown for Selecting Employee Category -->
+<div class="mb-3">
+    <label for="employeeCategory" class="form-label"><strong>Filter Employees</strong></label>
+    <select id="employeeCategory" class="form-select" [(ngModel)]="selectedCategory" (change)="updateDisplayedEmployees()">
+      <option value="all">All Employees</option>
+      <option value="male">Male Employees</option>
+      <option value="female">Female Employees</option>
+      <option value="IT">IT Department</option>
+      <option value="HR">HR Department</option>
+      <option value="Marketing">Marketing Department</option>
+      <option value="Finance">Finance Department</option>
+    </select>
+  </div>
+  
+  <!-- Employee Table -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h3 class="mb-0">{{selectedCategory}}</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Email</th>
+            <th>Joining Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of displayedEmployees;">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.joiningDate }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
