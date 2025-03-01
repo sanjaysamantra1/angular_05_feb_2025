@@ -10,7 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    CategoriesComponent,
+    // CategoriesComponent,
     // CarouselComponent,
     BodyComponent,
     FooterComponent

@@ -2,17 +2,23 @@
     <div class="row">
         <div class="text-center  mb-1">
             <div>This is Parent Component</div>
+            <div>
+                Enter Name:
+                <input #nameRef>
+            </div>
             <div>My Own value a is: {{a}} , <input [(ngModel)]="a" type="number"></div>
             <div>My child-1's data b is : {{child1.b}}</div>
-            <div>Parent showing  child-2's data on load : {{child2.name}}</div>
+            <div>Parent showing child-2's data on load : {{child2.name}}</div>
             <div>My child-2's data name is : {{parentName}}</div>
+
+            <button class="btn btn-primary" (click)="flag=!flag">Toggle Flag-{{flag}}</button>
         </div>
         <div class="col-sm-6">
             <app-child1 [a]="a" #child1></app-child1>
         </div>
         <div class="col-sm-6">
-            <app-child2 [aChild]="a" [child1Ref]="child1" 
-            (nameEvent)="receiveDataFromChild($event)" #child2></app-child2>
+            <app-child2 [aChild]="a" [child1Ref]="child1" (nameEvent)="receiveDataFromChild($event)"
+                #child2></app-child2>
         </div>
     </div>
 </div>

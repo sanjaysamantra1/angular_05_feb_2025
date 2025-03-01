@@ -48,4 +48,17 @@ export class Demo1Component {
       }
     });
   }
+
+  timer: any;
+  ngOnInit() {
+    console.log('Demo-1 Initialized');
+
+    this.timer = setInterval(() => {
+      console.log('Hi I am Demo-1, I am still Alive!!!')
+    }, 1000);
+  }
+  ngOnDestroy() {
+    console.log('Demo-1 is about to be Destroyed');
+    clearInterval(this.timer);
+  }
 }
