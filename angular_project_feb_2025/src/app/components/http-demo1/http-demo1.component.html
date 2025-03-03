@@ -1,0 +1,19 @@
+<h4 class="text-center">Http Demo-1</h4>
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <tbody>
+                @for(user of users;track $index){
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address.city}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
