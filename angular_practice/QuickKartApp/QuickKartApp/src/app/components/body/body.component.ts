@@ -8,6 +8,7 @@ import { PipeassignmentComponent } from '../pipeassignment/pipeassignment.compon
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
 import { StarRatingComponent } from '../star-rating/star-rating.component';
 import { EmployeeSComponent } from '../employee-s/employee-s.component';
+import { UsercrudComponent } from '../usercrud/usercrud.component';
 
 @Component({
   selector: 'app-body',
@@ -19,7 +20,8 @@ import { EmployeeSComponent } from '../employee-s/employee-s.component';
     //PipeassignmentComponent
    // EmployeeCRUDComponent,
    // StarRatingComponent
-    EmployeeSComponent
+   // EmployeeSComponent,
+    UsercrudComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

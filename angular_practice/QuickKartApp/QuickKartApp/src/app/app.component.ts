@@ -12,7 +12,7 @@ import { BodyComponent } from './components/body/body.component';
     NavbarComponent,
     FooterComponent,
     CategoriesComponent,
-    CarouselComponent,
+  //  CarouselComponent,
     BodyComponent
   ],
   templateUrl: './app.component.html',

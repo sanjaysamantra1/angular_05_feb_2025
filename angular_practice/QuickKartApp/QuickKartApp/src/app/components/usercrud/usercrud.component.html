@@ -1,0 +1,168 @@
+<!-- Assignment
+==========
+1. Create 1 user CRUD application using HttpClient
+	a. fetch the data and display in a table (json-server)
+	b. create a form, collect form data and make a post call to add a new user
+	c. add 'delete' button against every user, on click 'delete', delete that user
+	d. display 'Loading...' text/Image when data is being fetched
+	e. implement update functionality to update the data
+	f. write all the logics in a service for code reusability -->
+<!-- <div class="container">
+  <div class="row">
+    <br>
+    <h4 class="text-center">Employee CRUD using HttpClient</h4>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <button class="btn btn-primary" (click)="FetchData()">Fetch Data</button>
+      @if(loading){
+        <div class="spinner-border" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+      }
+     @else{
+       <table class="table-bordered table-striped">
+        <tbody>
+           @for(user of users;track $index){
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td><button class="btn btn-danger" (click)="DeleteUser(user.id)">Delete</button>  </td>
+           <td><button class="btn btn-danger" (click)="EditUser(user)">Edit</button>  </td>
+        </tr>
+      }
+        </tbody>
+      </table>
+     }
+    </div>
+    <div class="col-sm-4 border p-2">
+      <p class="text-center">{{isAdd?'Add' : 'Edit'}} User</p>
+       
+        <p>
+          <label>Id</label> &nbsp;
+        <input type="text" [(ngModel)]="currentUser.id" name="eId" placeholder="Enter Id"
+        />
+        </p>
+       <p>
+         <label>Name</label>&nbsp;
+        <input type="text" [(ngModel)]="currentUser.name" name="name" placeholder="Enter Name"
+        />
+       </p>
+       <p>
+         <label>username</label>&nbsp;
+        <input type="text" [(ngModel)]="currentUser.username" name="sal" placeholder="Enter Salary"
+        />
+       </p>
+       <p>
+         <label>email</label>&nbsp;
+        <input type="text" [(ngModel)]="currentUser.email" name="gender" placeholder="Enter Gender"
+        />
+       </p>
+       
+       @if(isAdd){
+            <button (click)="addUser(uid.value,uname.value,uusername.value,uemail.value)" >Add User</button>   
+    
+       }
+       @else{
+           <button (click)="updateUser(uid.value,uname.value,uusername.value,uemail.value)" >Update User</button>   
+    
+       }
+  
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <br />
+    <h4 class="text-center">Employee CRUD</h4>
+  </div>
+
+  <div class="row">
+   
+    <div class="col-sm-8">
+      <button class="btn btn-primary" (click)="FetchData()">Fetch Data</button>
+
+      @if(loading){
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      } @else{
+         
+      <table class="table table-bordered table-striped">
+        <tbody>
+          @for(user of users; track $index){
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="DeleteUser(user.id)">
+                Delete
+              </button>
+              <button class="btn btn-warning" (click)="EditUser(user)">
+                Edit
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+      }
+    </div>
+
+    <!-- Form Section -->
+    <div class="col-sm-4 border p-2">
+      <p class="text-center">{{ isAdd ? "Add" : "Edit" }} User</p>
+
+      <form>
+        <p>
+          <label>Id</label> &nbsp;
+          <input
+            type="text"
+            [(ngModel)]="currentUser.id"
+            name="eId"
+            placeholder="Enter Id"
+          />
+        </p>
+        <p>
+          <label>Name</label>&nbsp;
+          <input
+            type="text"
+            [(ngModel)]="currentUser.name"
+            name="name"
+            placeholder="Enter Name"
+          />
+        </p>
+        <p>
+          <label>Username</label>&nbsp;
+          <input
+            type="text"
+            [(ngModel)]="currentUser.username"
+            name="username"
+            placeholder="Enter Username"
+          />
+        </p>
+        <p>
+          <label>Email</label>&nbsp;
+          <input
+            type="text"
+            [(ngModel)]="currentUser.email"
+            name="email"
+            placeholder="Enter Email"
+          />
+        </p>
+        @if(isAdd){
+        <button class="btn btn-success" (click)="addUser()">Add User</button>
+        } @else{
+        <button class="btn btn-primary" (click)="updateUser()">
+          Update User
+        </button>
+        }
+      </form>
+    </div>
+  </div>
+</div>
