@@ -1,16 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
+import { IEmployee } from '../models/employee_model';
+import { Employee } from '../models/employee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  api_url: string = 'http://localhost:3000/employees';
+  api_url: string = 'http://localhost:3000/mployees';
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllEmployees() {
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/users');
+  getAllEmployees(): Observable<Employee[]> {
+    // return this.httpClient.get<Employee[]>(this.api_url);
+
+    return this.httpClient.get<Employee[]>(this.api_url).pipe(
+      map((responseArr: Employee[]) => { // rxjs map()
+        return responseArr.map((emp: Employee) => { // javascript array map()
+          return new Employee(emp.id, emp.firstName, emp.lastName, emp.email, emp.gender, emp.sal);
+        });
+      })
+    );
   }
   getEmployeeById(id: string) {
     return this.httpClient.get(`${this.api_url}/${id}`);

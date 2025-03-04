@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
+import { IEmployee } from '../../models/employee_model';
+import { Employee } from '../../models/employee';
 
 @Component({
   selector: 'app-http-demo2',
@@ -9,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './http-demo2.component.css'
 })
 export class HttpDemo2Component {
-  employees: any = [];
+  employees: Employee[] = [];
   isLoading: boolean = false;
   isAdd = true;
   currentEmp: any;
@@ -19,7 +21,7 @@ export class HttpDemo2Component {
 
   fetchEmployees() {
     this.isLoading = true;
-    this.employeeService.getAllEmployees().subscribe(response => {
+    this.employeeService.getAllEmployees().subscribe((response: Employee[]) => {
       console.log(response)
       this.employees = response;
       this.isLoading = false;

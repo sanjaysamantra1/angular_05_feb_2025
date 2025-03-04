@@ -12,24 +12,25 @@
                 <span class="visually-hidden"></span>
             </div>
             }@else{
-            <!-- <table class="table table-bordered table-striped mt-2">
+            <table class="table table-bordered table-striped mt-2">
                 <tbody>
                     @for(emp of employees;track $index;){
                     <tr>
                         <td>{{emp.id}}</td>
                         <td>{{emp.firstName}}</td>
                         <td>{{emp.lastName}}</td>
+                        <td>{{emp.getFullName()}}</td>
                         <td>{{emp.email}}</td>
                         <td>{{emp.gender}}</td>
                         <td>{{emp.sal}}</td>
                         <td>
                             <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
-                            <button class="btn btn-primary mx-1" (click)="editEmployee(emp)">Edit</button>
+                            <button class="btn btn-primary" (click)="editEmployee(emp)">Edit</button>
                         </td>
                     </tr>
                     }
                 </tbody>
-            </table> -->
+            </table>
             }
         </div>
         <div class="col-sm-4 border p-2">

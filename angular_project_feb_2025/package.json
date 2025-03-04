@@ -24,6 +24,7 @@
     "awesome-snackbar": "^2.0.7",
     "bootstrap": "^5.3.3",
     "ngx-pagination": "^6.0.3",
+    "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.17.2",
     "tslib": "^2.3.0",
