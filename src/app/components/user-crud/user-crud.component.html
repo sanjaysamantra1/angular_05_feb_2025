@@ -1,0 +1,88 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- User Table Column -->
+    <div class="col-md-8 col-sm-12">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">User Table</h3>
+        </div>
+        <div class="card-body">
+          <button class="btn btn-primary mb-3" (click)="fetchUsers()">Get User Details</button>
+          <div *ngIf="isLoading" class="text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div *ngIf="!isLoading" class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Company</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users">
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.phone }}</td>
+                  <td>{{ user.company }}</td>
+                  <td>
+                    <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Delete</button>
+                    <button class="btn btn-primary btn-sm ms-2" (click)="editUser(user)">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- User Form Column -->
+    <div class="col-md-4 col-sm-12 mt-4 mt-md-0">
+      <div class="card shadow-lg">
+        <div class="card-header bg-secondary text-white">
+          <h4 class="mb-0">{{ isAddedUser ? 'Add User' : 'Edit User' }}</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="id" class="form-label">ID</label>
+              <input type="text" id="id" class="form-control" [(ngModel)]="newUser.id" name="id" required>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" class="form-control" [(ngModel)]="newUser.name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" [(ngModel)]="newUser.email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="text" id="phone" class="form-control" [(ngModel)]="newUser.phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="company" class="form-label">Company</label>
+              <input type="text" id="company" class="form-control" [(ngModel)]="newUser.company" name="company" required>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-success" (click)="addUser(); $event.preventDefault()">
+                {{ isAddedUser ? 'Add User' : 'Update User' }}
+              </button>
+              <button class="btn btn-warning" (click)="resetForm(); $event.preventDefault()">Reset</button>
+            </div>
+            <div *ngIf="!isAddedUser" class="mt-3">
+              <button class="btn btn-primary w-100" (click)="saveEditedUser(); $event.preventDefault()">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

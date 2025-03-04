@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John",
+      "email": "john@example.com",
+      "phone": "1234567890",
+      "company": "Cognizant"
+    },
+    {
+      "id": "2",
+      "name": "Sarah",
+      "email": "sarah@example.com",
+      "phone": "2345678901",
+      "company": "Accenture"
+    },
+    {
+      "id": "4",
+      "name": "Budhini",
+      "email": "rao@gmail.com",
+      "phone": "3124567890",
+      "company": "Wipro"
+    },
+    {
+      "id": "5",
+      "name": "Nishith",
+      "email": "nishith105@gmail.com",
+      "phone": "2233399208",
+      "company": "Infosys"
+    }
+  ]
+}

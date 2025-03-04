@@ -15,11 +15,13 @@ import { EmployeeParentComponent } from './components/employee-parent/employee-p
 import { EmployeeTableComponent } from './components/employee-table/employee-table.component';
 import { StarRatingComponent } from "./components/star-rating/star-rating.component";
 import { EmployeesComponent } from "./components/employees/employees.component";
+import { HttpdemoComponent } from "./components/httpdemo/httpdemo.component";
+import { UserCrudComponent } from "./components/user-crud/user-crud.component";
 @Component({
   selector: 'app-root',
   standalone:true,
   imports: [NavbarComponent, CategoriesComponent, FooterComponent, BodyComponent, CarouselComponent,
-    DatabindingComponent, ModalComponent, EmployeeCRUDComponent, PipesComponent, EmployeeTableComponent, EmployeeParentComponent, EmployeeFormComponent, StarRatingComponent, EmployeesComponent],
+    DatabindingComponent, ModalComponent, EmployeeCRUDComponent, PipesComponent, EmployeeTableComponent, EmployeeParentComponent, EmployeeFormComponent, StarRatingComponent, EmployeesComponent, HttpdemoComponent, UserCrudComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
