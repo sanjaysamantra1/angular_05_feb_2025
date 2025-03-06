@@ -1,0 +1,19 @@
+<h3>Todo List</h3>
+
+<table class="table table-bordered">
+    <tbody>
+        @for(todo of todos$|async;track $index){
+        <tr>
+            <td>
+                {{todo.id}}
+            </td>
+            <td>
+                {{todo.text}}
+            </td>
+            <td>
+                {{todo.completed.toString()}}
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

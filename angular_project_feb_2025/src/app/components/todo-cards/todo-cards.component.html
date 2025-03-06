@@ -1,0 +1,15 @@
+<h3>Todo Cards</h3>
+
+<div class="row">
+  @for(todo of todos$ | async;track $index){
+  <div class="col-sm-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">{{todo.id}}</h5>
+        <p class="card-text">{{todo.text}}</p>
+        <p class="card-text">{{todo.completed.toString()}}</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>
