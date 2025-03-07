@@ -23,6 +23,8 @@ import { SubjectDemo1Component } from '../subject-demo1/subject-demo1.component'
 import { TodoListComponent } from '../todo-list/todo-list.component';
 import { TodoCardsComponent } from '../todo-cards/todo-cards.component';
 import { TodoAddComponent } from '../todo-add/todo-add.component';
+import { SignalDemo1Component } from '../signal-demo1/signal-demo1.component';
+import { SignalDemo2Component } from '../signal-demo2/signal-demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -48,9 +50,11 @@ import { TodoAddComponent } from '../todo-add/todo-add.component';
     // ObservableDemo3Component
     // ObservableDemo4Component
     // SubjectDemo1Component
-    TodoListComponent,
-    TodoCardsComponent,
-    TodoAddComponent
+    // TodoListComponent,
+    // TodoCardsComponent,
+    // TodoAddComponent
+    // SignalDemo1Component
+    SignalDemo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

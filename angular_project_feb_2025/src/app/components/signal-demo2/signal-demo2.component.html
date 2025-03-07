@@ -1,0 +1,22 @@
+<h3 class="text-center">Signal Demo -2 (Effect)</h3>
+<div class="border">
+    <h2>User id: {{userId()}}</h2>
+    <button (click)="incrementUserId()">Increment User Id</button>
+</div>
+
+<div class="col-sm-3">
+    <div class="card text-center">
+        <img class="card-img-top"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjI5Cdcq6ocwEbSR5jvM_aUeckl8VBQMUnL6vWu83kmWKaodh9scTAitMD6sC7vv77n_E&usqp=CAU"
+            alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{userData.username}}</h5>
+            <p class="card-text">{{userData.id}}</p>
+            <p class="card-text">{{userData.name}}</p>
+            <p class="card-text">{{userData.email}}</p>
+            <p class="card-text">{{userData.phone}}</p>
+            <p class="card-text">{{userData.address.city}}</p>
+            <a href="#" class="btn btn-primary">Details</a>
+        </div>
+    </div>
+</div>
