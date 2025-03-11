@@ -1,0 +1,55 @@
+<h4 class="text-center">Template Driven Form With Validation</h4>
+
+<div class="border p-2 col-sm-6 offset-3">
+    <form [formGroup]="registerForm" (submit)="submitMyForm(registerForm.value)">
+        <p>
+            First Name:
+            <input formControlName="firstname" />
+            <span class="text-danger" *ngIf="registerForm.controls.firstname.hasError('required') && registerForm.controls.firstname.dirty"> Name Required </span>
+            <span class="text-danger" *ngIf="registerForm.controls.firstname.hasError('minlength') && registerForm.controls.firstname.dirty">Minimum 5 chars </span>
+        <p>
+            Last Name:
+            <input formControlName="lastname" />
+        </p>
+        <p>
+            Email:
+            <input formControlName="email" />
+        </p>
+        <fieldset formGroupName="address">
+            <p>Street: <input formControlName="street" /></p>
+            <p>
+                City:
+
+                <select formControlName="city">
+                    <option>city-1</option>
+                    <option>city-2</option>
+                    <option>city-3</option>
+                    <option>city-4</option>
+                    <option>city-5</option>
+                    <option>city-6</option>
+                    <option>city-7</option>
+                    <option>city-8</option>
+                    <option>city-9</option>
+                    <option>city-10</option>
+                    <option>city-11</option>
+                    <option>city-12</option>
+                    <option>city-13</option>
+                    <option>city-14</option>
+                    <option>city-15</option>
+                    <option>city-16</option>
+                    <option>city-17</option>
+                    <option>city-18</option>
+                    <option>city-19</option>
+                    <option>city-20</option>
+                </select>
+            </p>
+            <p>pincode: <input formControlName="pincode" /></p>
+        </fieldset>
+
+        <input type="submit" value="Submit" [disabled]="registerForm.invalid" class="btn btn-primary mx-1">
+        <input type="reset" value="Clear" class="btn btn-danger mx-1">
+    </form>
+    <pre>
+        {{registerForm.value | json}}
+    </pre>
+</div>
