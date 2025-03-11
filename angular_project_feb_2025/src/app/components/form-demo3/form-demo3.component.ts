@@ -22,12 +22,16 @@ export class FormDemo3Component {
       address: new FormGroup({
         street: new FormControl(),
         city: new FormControl(),
-        pincode: new FormControl(),
+        pincode: new FormControl('123456', [Validators.required, Validators.pattern(/0-9/)]),
       })
-    });
+    }, { updateOn: 'blur' });
   }
 
   submitMyForm(formdata: any) {
-    console.log(formdata);
+    if (formdata.valid) {
+      console.log(formdata.value);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }

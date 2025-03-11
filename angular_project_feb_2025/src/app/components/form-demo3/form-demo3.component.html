@@ -1,7 +1,7 @@
 <h4 class="text-center">Template Driven Form With Validation</h4>
 
 <div class="border p-2 col-sm-6 offset-3">
-    <form [formGroup]="registerForm" (submit)="submitMyForm(registerForm.value)">
+    <form [formGroup]="registerForm" (submit)="submitMyForm(registerForm)">
         <p>
             First Name:
             <input formControlName="firstname" />
@@ -46,7 +46,7 @@
             <p>pincode: <input formControlName="pincode" /></p>
         </fieldset>
 
-        <input type="submit" value="Submit" [disabled]="registerForm.invalid" class="btn btn-primary mx-1">
+        <input type="submit" value="Submit"  class="btn btn-primary mx-1">
         <input type="reset" value="Clear" class="btn btn-danger mx-1">
     </form>
     <pre>
