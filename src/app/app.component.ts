@@ -17,11 +17,15 @@ import { StarRatingComponent } from "./components/star-rating/star-rating.compon
 import { EmployeesComponent } from "./components/employees/employees.component";
 import { HttpdemoComponent } from "./components/httpdemo/httpdemo.component";
 import { UserCrudComponent } from "./components/user-crud/user-crud.component";
+import { FormTemplateComponent } from "./components/form-template/form-template.component";
+import { RouterModule, Routes } from '@angular/router';
+
+
 @Component({
   selector: 'app-root',
   standalone:true,
   imports: [NavbarComponent, CategoriesComponent, FooterComponent, BodyComponent, CarouselComponent,
-    DatabindingComponent, ModalComponent, EmployeeCRUDComponent, PipesComponent, EmployeeTableComponent, EmployeeParentComponent, EmployeeFormComponent, StarRatingComponent, EmployeesComponent, HttpdemoComponent, UserCrudComponent],
+    DatabindingComponent, ModalComponent, EmployeeCRUDComponent, PipesComponent, EmployeeTableComponent, EmployeeParentComponent, EmployeeFormComponent, StarRatingComponent, EmployeesComponent, HttpdemoComponent, UserCrudComponent, FormTemplateComponent,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
