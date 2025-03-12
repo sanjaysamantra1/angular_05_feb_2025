@@ -21,6 +21,9 @@
                     <td>{{user.email}}</td>
                     <td>{{user.phone}}</td>
                     <td>{{user.address.city}}</td>
+                    <td>
+                        <button [routerLink]="['/userdetails', user.id]" class="btn btn-primary">View Details</button>
+                    </td>
                 </tr>
                 }
             </tbody>

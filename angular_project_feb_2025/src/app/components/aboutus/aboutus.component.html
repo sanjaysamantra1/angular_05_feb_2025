@@ -1,1 +1,8 @@
 <h2 class="text-center">This is About-Us Component</h2>
+
+<div>
+    <a href="/home">Go To Home Page</a> <!--This is not recommended, it refreshes whole page-->
+
+    <button routerLink="/home" class="btn btn-primary mx-1">take me to Home </button>
+    <button class="btn btn-primary mx-1" (click)="doSomethingAndGoToHome()">Do Something & Go To Home</button>
+</div>
