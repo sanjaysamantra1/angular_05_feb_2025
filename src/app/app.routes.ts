@@ -8,17 +8,18 @@ import { MenComponent } from './men/men.component';
 import { WomenComponent } from './women/women.component';
 import { KidsComponent } from './kids/kids.component';
 import { SaleComponent } from './sale/sale.component';
+import { UsersComponent } from './components/users/users.component';
+import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'aboutus', component: AboutusComponent },
-    { path: 'careers', component: CareersComponent },
-    { path: 'contactus', component: ContactusComponent },
     { path: 'men', component: MenComponent },
     { path: 'women', component: WomenComponent },
     { path: 'kids', component: KidsComponent },
     { path: 'sale', component: SaleComponent },
+    { path: 'users', component: UsersComponent },    
+    { path: 'userdetails/:id', component: UserdetailsComponent },    
     { path: '', component: HomeComponent },
     { path: '**', component: NotfoundComponent },
 ];

@@ -1,0 +1,63 @@
+
+ <div class="container">
+    <h2>User details</h2>
+    <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for(user of users;track $index){
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address.city}}</td>
+                    <td>
+                        <button [routerLink]="['/userdetails', user.id]" class="btn btn-primary">View Details</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <hr />
+    <div class="row mb-2">
+        <div class="col-sm-4 offset-4">
+            <input class="form-control" placeholder="Search..." type="search" name="" id="">
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-primary mx-2">Sort Asc</button>
+            <button class="btn btn-primary">Sort Desc</button>
+        </div>
+    </div>
+    <div class="row">
+        @for(user of users ;track $index){
+        <div class="col-sm-3">
+            <div class="card text-center">
+                <img class="card-img-top" 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjI5Cdcq6ocwEbSR5jvM_aUeckl8VBQMUnL6vWu83kmWKaodh9scTAitMD6sC7vv77n_E&usqp=CAU"
+                    alt="Card image cap">
+                <div class="card-body" zoomin>
+                    <h5 class="card-title">{{user.username}}</h5>
+                    <p class="card-text">{{user.id}}</p>
+                    <p class="card-text">{{user.name}}</p>
+                    <p class="card-text">{{user.email}}</p>
+                    <p class="card-text">{{user.phone}}</p>
+                    <p class="card-text">{{user.address.city}}</p>
+                    <button [routerLink]="['/userdetails', user.id]" class="btn btn-primary">Details</button>
+                </div>
+            </div>
+        </div>
+        }
+        @empty {
+        No Users Found
+        }
+       
+    </div>
+</div> 
