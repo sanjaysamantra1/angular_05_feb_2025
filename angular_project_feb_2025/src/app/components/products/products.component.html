@@ -3,20 +3,22 @@
 <div class="container">
     <div class="row">
         @for(product of productsArr;track product.id){
-            <div class="col-sm-3">
-                <div class="card text-center">
-                    <img class="card-img-top card-image" height="200px" src="{{product.image}}" alt="Card image cap">
-                    <div class="card-body" zoomin>
-                        <h5 class="card-title">{{product.category}}</h5>
-                        <p class="card-text">{{product.id}}</p>
-                        <p class="card-text">{{product.title}}</p>
-                        <p class="card-text text-truncate">{{product.description}}</p>
-                        <p class="card-text">{{product.price}}</p>
-                        <p class="card-text">{{product.rating.rate}}</p>
-                        <a href="#" class="btn btn-primary">Details</a>
-                    </div>
+        <div class="col-sm-3">
+            <div class="card text-center">
+                <img class="card-img-top card-image" height="200px" src="{{product.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.category}}</h5>
+                    <p class="card-text">{{product.id}}</p>
+                    <p class="card-text">{{product.title}}</p>
+                    <p class="card-text text-truncate">{{product.description}}</p>
+                    <p class="card-text">{{product.price}}</p>
+                    <p class="card-text">{{product.rating.rate}}</p>
+                    <button class="btn btn-primary" [routerLink]="['/productdetails']"
+                        [queryParams]="{id:product.id, title:product.title,price:product.price}">
+                        View Details</button>
                 </div>
             </div>
+        </div>
         }
     </div>
 </div>

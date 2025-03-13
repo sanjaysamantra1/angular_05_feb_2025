@@ -1,1 +1,38 @@
 <h2 class="text-center">This is Contact-Us Component</h2>
+
+<div class="row">
+    <div class="col-sm-4 offset-4 border p-3">
+        <form #myForm="ngForm" (ngSubmit)="logForm(myForm.value)">
+            <p>
+                <label>Firstname:</label>
+                <input type="text" name="firstname" ngModel>
+            </p>
+
+            <p>
+                <label>Lastname:</label>
+                <input type="text" name="lastname" ngModel>
+            </p>
+
+            <div ngModelGroup='address'>
+                <p>
+                    <label>Street:</label>
+                    <input type="text" name="street" ngModel>
+                </p>
+
+                <p>
+                    <label>pin:</label>
+                    <input type="text" name="zip" ngModel>
+                </p>
+
+                <p>
+                    <label>City:</label>
+                    <input type="text" name="city" ngModel>
+                </p>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <h2> {{ myForm.value | json }} </h2>
+        <h1>Has changes: {{hasChanges}}</h1>
+    </div>
+</div>

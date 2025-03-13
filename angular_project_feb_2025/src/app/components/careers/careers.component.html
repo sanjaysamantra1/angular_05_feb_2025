@@ -1,1 +1,17 @@
 <h2 class="text-center">This is Careers Component</h2>
+<h3>This is Common Area for Nested routes</h3>
+<hr />
+
+<div class="row">
+    <div class="col-sm-2">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="permanent" routerLinkActive="active">Permanent Jobs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="contract" routerLinkActive="active">Contract Jobs</a>
+        </li>
+    </div>
+    <div class="col-sm-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>
