@@ -10,6 +10,8 @@ import { KidsComponent } from './kids/kids.component';
 import { SaleComponent } from './sale/sale.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 
 
 export const routes: Routes = [
@@ -18,7 +20,9 @@ export const routes: Routes = [
     { path: 'women', component: WomenComponent },
     { path: 'kids', component: KidsComponent },
     { path: 'sale', component: SaleComponent },
-    { path: 'users', component: UsersComponent },    
+    { path: 'users', component: UsersComponent },   
+    { path:'products',component: ProductsComponent}, 
+    { path:'productdetails',component: ProductdetailsComponent}, 
     { path: 'userdetails/:id', component: UserdetailsComponent },    
     { path: '', component: HomeComponent },
     { path: '**', component: NotfoundComponent },

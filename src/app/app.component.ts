@@ -21,11 +21,13 @@ import { FormTemplateComponent } from "./components/form-template/form-template.
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './components/users/users.component';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 @Component({
   selector: 'app-root',
   standalone:true,
   imports: [NavbarComponent, CategoriesComponent, FooterComponent, BodyComponent, CarouselComponent,
-    DatabindingComponent, ModalComponent, EmployeeCRUDComponent, PipesComponent, EmployeeTableComponent, EmployeeParentComponent, EmployeeFormComponent, StarRatingComponent, EmployeesComponent, HttpdemoComponent, UserCrudComponent, FormTemplateComponent, RouterModule,UsersComponent,UserdetailsComponent],
+    DatabindingComponent, ModalComponent, EmployeeCRUDComponent, PipesComponent, EmployeeTableComponent, EmployeeParentComponent, EmployeeFormComponent, StarRatingComponent, EmployeesComponent, HttpdemoComponent, UserCrudComponent, FormTemplateComponent, RouterModule,UsersComponent,UserdetailsComponent,ProductsComponent,ProductdetailsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
