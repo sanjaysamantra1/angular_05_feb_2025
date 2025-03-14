@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-products',
   imports: [
-    ZoominDirective,
+    // ZoominDirective,
     RouterLink
   ],
   templateUrl: './products.component.html',
