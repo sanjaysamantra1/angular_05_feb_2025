@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/": {},
+    "/aboutus": {},
+    "/careers": {},
+    "/employees": {},
+    "/home": {},
+    "/products": {},
+    "/users": {}
+  }
+}
