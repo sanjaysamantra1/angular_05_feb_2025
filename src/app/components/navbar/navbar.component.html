@@ -4,44 +4,25 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Govt of India</a>
-
-    Toggle button for mobile view
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar Items -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/departments">Departments</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="govDropdown" role="button" data-bs-toggle="dropdown" 
-            aria-expanded="false">
-            More
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="govDropdown">
-            <li><a class="dropdown-item" routerLink="/e-governance">E-Governance</a></li>
-            <li><a class="dropdown-item" routerLink="/policies">Policies</a></li>
-            <li><a class="dropdown-item" routerLink="/contact">Contact Us</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <!-- Search Form -->
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
-    </div>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="home" routerLinkActive="active-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="aboutus" routerLinkActive="active-link">AboutUs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="careers" routerLinkActive="active-link">Careers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="employees" routerLinkActive="active-link">Employees</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="products" routerLinkActive="active-link">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="users" routerLinkActive="active-link">Users</a>
+      </li>
+    </ul>
   </div>
 </nav>

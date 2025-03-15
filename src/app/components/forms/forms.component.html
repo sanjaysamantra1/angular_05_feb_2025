@@ -1,0 +1,108 @@
+<h5 style="text-align: center;">Candidate Registration Form</h5>
+<div class="border p-2 col-sm-6 offset-3">
+    <form #registrationForm="ngForm" (submit)="submitMyForm(registrationForm)">
+
+        <p>
+            First Name <span class="text-danger">*</span>:
+            <input name="firstName" ngModel #firstName="ngModel" required minlength="5" />
+
+            @if (firstName.dirty && firstName.hasError('required')) {
+            <span class="text-danger">
+                First Name is required
+            </span>
+            }
+            @if (firstName.dirty && firstName.hasError('minlength')) {
+            <span class="text-danger">
+                First Name should have minimum 5 characters
+            </span>
+            }
+        </p>
+        <p>
+            Last Name:
+            <input name="lastName" ngModel #lastName="ngModel" />
+        </p>
+        <p>
+            Email <span class="text-danger">*</span>:
+            <input name="email" ngModel #email="ngModel" required email />
+
+            @if (email.dirty && email.hasError('required')) {
+            <span class="text-danger">
+                Email is required
+            </span>
+            }
+            @if (email.dirty && email.hasError('email')) {
+            <span class="text-danger">
+                Please enter a valid email address
+            </span>
+            }
+        </p>
+        <p>
+            Gender:
+            <input type="radio" name="gender" [(ngModel)]="user.gender" value="Male" #gender="ngModel"> Male
+            <input type="radio" name="gender" [(ngModel)]="user.gender" value="Female" #gender="ngModel"> Female
+
+            @if (gender.dirty && gender.hasError('required')) {
+            <span class="text-danger">
+                Gender is required
+            </span>
+            }
+        </p>
+        <p>
+            Skills:
+            <input type="checkbox" name="angular" [(ngModel)]="user.skills.Angular"> Angular
+            <input type="checkbox" name="react" [(ngModel)]="user.skills.React"> React
+            <input type="checkbox" name="java" [(ngModel)]="user.skills.Java"> Java
+            <input type="checkbox" name="devops" [(ngModel)]="user.skills.Devops"> Devops
+        </p>
+        <p>
+            Country <span class="text-danger">*</span>:
+            <select name="country" [(ngModel)]="user.country" required #country="ngModel">
+                <option value="" disabled selected>Select Country</option>
+                @for (c of countries; track c) {
+                <option [value]="c">{{ c }}</option>
+                }
+            </select>
+            @if (country.dirty && country.hasError('required')) {
+            <span class="text-danger">
+                Country is required
+            </span>
+            }
+        </p>
+        <fieldset ngModelGroup="address">
+            <p>
+                Street <span class="text-danger">*</span>:
+                <input name="street" [(ngModel)]="user.address.street" required #street="ngModel" />
+
+                @if (street.dirty && street.hasError('required')) {
+                <span class="text-danger">
+                    Street is required
+                </span>
+                }
+            </p>
+            <p>
+                City <span class="text-danger">*</span>:
+                <input name="city" [(ngModel)]="user.address.city" required #city="ngModel" />
+
+                @if (city.dirty && city.hasError('required')) {
+                <span class="text-danger">
+                    City is required
+                </span>
+                }
+            </p>
+            <p>
+                Pincode <span class="text-danger">*</span>:
+                <input name="zip" [(ngModel)]="user.address.zip" required #zip="ngModel" />
+
+                @if (zip.dirty && zip.hasError('required')) {
+                <span class="text-danger">
+                    Pincode is required
+                </span>
+                }
+            </p>
+        </fieldset>
+        <input type="submit" value="Submit" />
+
+        <input type="reset" value="Clear" />
+    </form>
+    <pre>{{registrationForm.value | json}}</pre>
+</div>

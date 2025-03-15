@@ -1,0 +1,72 @@
+<div style="margin: 20px;">
+    <h3>Form</h3>
+    <form>
+        <input type="number" placeholder="Enter ID" [(ngModel)]="newUser.id" name="id" required />
+        <input type="text" placeholder="Enter Name" [(ngModel)]="newUser.name" name="name" required />
+        <input type="text" placeholder="Enter Username" [(ngModel)]="newUser.username" name="username" required />
+        <input type="email" placeholder="Enter Email" [(ngModel)]="newUser.email" name="email" required />
+        <input type="text" placeholder="Enter Street" [(ngModel)]="newUser.address.street" name="street" />
+        <input type="text" placeholder="Enter Suite" [(ngModel)]="newUser.address.suite" name="suite" />
+        <input type="text" placeholder="Enter City" [(ngModel)]="newUser.address.city" name="city" />
+        <input type="text" placeholder="Enter Zipcode" [(ngModel)]="newUser.address.zipcode" name="zipcode" />
+        <input type="text" placeholder="Enter Latitude" [(ngModel)]="newUser.address.geo.lat" name="lat" />
+        <input type="text" placeholder="Enter Longitude" [(ngModel)]="newUser.address.geo.lng" name="lng" />
+        <input type="text" placeholder="Enter Phone" [(ngModel)]="newUser.phone" name="phone" />
+        <input type="text" placeholder="Enter Website" [(ngModel)]="newUser.website" name="website" />
+        <input type="text" placeholder="Enter Company Name" [(ngModel)]="newUser.company.name" name="companyName" />
+        <input type="text" placeholder="Enter Catch Phrase" [(ngModel)]="newUser.company.catchPhrase"
+            name="catchPhrase" />
+        <input type="text" placeholder="Enter Business" [(ngModel)]="newUser.company.bs" name="bs" />
+        <button type="button" class="btn-sucess" (click)="addUsers()">Add User</button>
+    </form>
+</div>
+<hr>
+<div style="margin: 20px;">
+    <h3 style="text-align: center;">DataBase</h3>
+    <table class="table table-bordered table-striped">
+        <thead style="text-align: center;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Street</th>
+                <th>Suite</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company Name</th>
+                <th>Catch Phrase</th>
+                <th>Business</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (user of usercrudService.users; track $index) {
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.address.street }}</td>
+                <td>{{ user.address.suite }}</td>
+                <td>{{ user.address.city }}</td>
+                <td>{{ user.address.zipcode }}</td>
+                <td>{{ user.address.geo.lat }}</td>
+                <td>{{ user.address.geo.lng }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.website }}</td>
+                <td>{{ user.company.name }}</td>
+                <td>{{ user.company.catchPhrase }}</td>
+                <td>{{ user.company.bs }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

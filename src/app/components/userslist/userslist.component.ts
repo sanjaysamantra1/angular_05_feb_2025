@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ZoominDirective } from '../../directives/zoomin.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-userslist',
-  imports: [ZoominDirective],
+  imports: [ZoominDirective,RouterLink],
   templateUrl: './userslist.component.html',
   styleUrl: './userslist.component.css'
 })

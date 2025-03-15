@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -21,7 +21,7 @@
         </tbody>
     </table>
 </div>
-<hr />
+<hr /> -->
 
 
 <div class="toggle-container">
@@ -80,10 +80,13 @@
                 <td>{{user.company.name}}</td>
                 <td>{{user.company.catchPhrase}}</td>
                 <td>{{user.company.bs}}</td>
+                <td><button  class="btn btn-primary">View Details</button></td>
+                
             </tr>
             }
         </tbody>
     </table>
+
 </div>
 
 }
@@ -92,7 +95,7 @@
 <div class="card-view" style="display: flex;flex-wrap: wrap;">
     @for(user of userslist;track $index){
     <div class="card" style="width: 18rem;">
-        <img src="images\AK.jpg" class="card-img-top" Zoomin>
+        <img src="https://as2.ftcdn.net/jpg/02/23/50/73/1000_F_223507324_jKl7xbsaEdUjGr42WzQeSazKRighVDU4.jpg">
         <div class="card-body">
             <a href="#" class="btn btn-success" style="font-weight: bold;">{{ user.name }}</a>
             <p><strong>ID:</strong> {{ user.id }}</p>
